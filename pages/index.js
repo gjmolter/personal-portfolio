@@ -1,65 +1,65 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Link from "next/link";
 
 export default function Home() {
+  function getMyAge() {
+    var today = new Date();
+    var birthDate = new Date("1997-11-18");
+    var age = today.getFullYear() - birthDate.getFullYear();
+    var m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+      age--;
+    }
+    return age;
+  }
+
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
+    <section>
+      <div className="faceCircle" />
+      <h1>Hey, my name is Gabriel Molter.</h1>
+      <p>
+        In a hurry? Go straight to my <Link href="/portfolio">Portfolio</Link>.
+      </p>
+      <p>
+        I am a {getMyAge()}-year-old full stack developer from{" "}
         <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+          href="https://www.google.com.br/maps/place/Petr%C3%B3polis,+RJ/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
+          Petrópolis, Brazil
         </a>
-      </footer>
-    </div>
-  )
+        , currently living in{" "}
+        <a
+          href="https://www.google.com.br/maps/place/Vancouver,+BC"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Vancouver, Canada
+        </a>
+        .<br />
+        <br />
+        I've started working with web development back in 2011, when I was about
+        14 years old, designing and implementing Flash websites.
+        <br />
+        <br />
+        Also in 2011, I started developing iOS apps. The first app I released on
+        the AppStore made it to the Top 10 Educational Apps in Brazil.
+        <br />
+        <br />
+        In 2015 I switched my attention back to web development and started
+        studying towards my{" "}
+        <a
+          href="https://www.youracclaim.com/badges/73c5d0e8-9412-427f-86dc-a155cc276c20/public_url"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Microsoft HTML5, CSS3 and JS certification, which I got in 2016
+        </a>
+        .<br />
+        <br />
+        As of today, I am an IT student, and a Freelancer for companies both in
+        Canada and Brazil.
+      </p>
+    </section>
+  );
 }

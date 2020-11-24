@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="36px" height="26px" viewBox="0 0 36 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Resumé" transform="translate(-836.000000, -929.000000)">
+            <g id="twemoji-flag-for-flag-brazil" transform="translate(836.000000, 924.000000)" fill-rule="nonzero">
+                <g id="Icon">
+                    <path d="M36,27 C36,29.209139 34.209139,31 32,31 L4,31 C1.790861,31 0,29.209139 0,27 L0,9 C0,6.790861 1.790861,5 4,5 L32,5 C34.209139,5 36,6.790861 36,9 L36,27 Z" id="Icon-Path" fill="#009B3A"></path>
+                    <polygon id="Icon-Path" fill="#FEDF01" points="32.728 18 18 29.124 3.272 18 18 6.875"></polygon>
+                    <circle id="Icon-Oval" fill="#002776" cx="17.976" cy="17.924" r="6.458"></circle>
+                    <path d="M12.277,14.887 C11.9415874,15.5190694 11.7144432,16.2028681 11.605,16.91 C15.6,16.62 21.022,18.801 23.349,21.505 C23.751,20.901 24.049,20.225 24.232,19.501 C21.36,16.693 16.315,14.871 12.277,14.887 L12.277,14.887 Z" id="Icon-Path" fill="#CBE9D4"></path>
+                    <path d="M12,18.233 L13,18.233 L13,19.233 L12,19.233 L12,18.233 Z M13,20.233 L14,20.233 L14,21.233 L13,21.233 L13,20.233 Z" id="Icon-Shape" fill="#88C9F9"></path>
+                    <path d="M15,18.233 L16,18.233 L16,19.233 L15,19.233 L15,18.233 Z M17,19.233 L18,19.233 L18,20.233 L17,20.233 L17,19.233 Z M21,21.233 L22,21.233 L22,22.233 L21,22.233 L21,21.233 Z M18,22.233 L19,22.233 L19,23.233 L18,23.233 L18,22.233 Z M21,16.233 L22,16.233 L22,17.233 L21,17.233 L21,16.233 Z" id="Icon-Shape" fill="#55ACEE"></path>
+                    <polygon id="Icon-Path" fill="#3B88C3" points="19 20.233 20 20.233 20 21.233 19 21.233"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
