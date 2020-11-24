@@ -1,15 +1,23 @@
 import { useEffect, useRef, useState } from "react";
 import NextImage from "next/image";
+import { useRouter } from "next/router";
 
 //Images
 import chooseProject from "../img/chooseProject.png";
+import chooseProjectPTBR from "../img/chooseProjectPTBR.png";
+
+//Translations
+import translations from "../languages/translations";
 
 export default function Portfolio() {
+  const router = useRouter();
+  const t = translations[router.locale];
+
   //LOGOS ARE 150x150 AND SCREENSHOTS ARE 1565x937
   const jobs = [
     {
       name: "RevoCalendar Component",
-      tags: ["all", "all web", "open source", "react"],
+      tags: [t.all, t.allweb, "open source", "react"],
       link: "https://gjmolter.github.io/revo-calendar/",
       screenshot: "/screenshots/revoScreenshot.png",
       logo: "/portfolioLogos/logoRevoCalendar.png",
@@ -17,7 +25,7 @@ export default function Portfolio() {
     },
     {
       name: "Chilly Capybara",
-      tags: ["all", "all web", "react", "nextjs"],
+      tags: [t.all, t.allweb, "react", "nextjs"],
       link: "https://chillycapybara.com",
       screenshot: "/screenshots/chillycapybaraScreenshot.png",
       logo: "/portfolioLogos/logoChilly.png",
@@ -25,7 +33,7 @@ export default function Portfolio() {
     },
     {
       name: "Petrótica",
-      tags: ["all", "all web", "php"],
+      tags: [t.all, t.allweb, "php"],
       link: "http://petrotica.com.br",
       screenshot: "/screenshots/petroticaScreenshot.png",
       logo: "/portfolioLogos/logoPetrotica.png",
@@ -33,7 +41,7 @@ export default function Portfolio() {
     },
     {
       name: "Tribuna de Petrópolis",
-      tags: ["all", "all web", "php"],
+      tags: [t.all, t.allweb, "php"],
       link: "https://tribunadepetropolis.com.br",
       screenshot: "/screenshots/tribunaScreenshot.png",
       logo: "/portfolioLogos/logoTribuna.png",
@@ -41,7 +49,7 @@ export default function Portfolio() {
     },
     {
       name: "Gabriela Mussel",
-      tags: ["all", "all web", "react", "nextjs"],
+      tags: [t.all, t.allweb, "react", "nextjs"],
       link: "https://gabrielamussel.com.br",
       screenshot: "/screenshots/dragabrielamusselsiteScreenshot.png",
       logo: "/portfolioLogos/logoGabi.png",
@@ -49,7 +57,7 @@ export default function Portfolio() {
     },
     {
       name: "PetroByte",
-      tags: ["all", "all web", "react", "nextjs"],
+      tags: [t.all, t.allweb, "react", "nextjs"],
       link: "https://petrobyte.com.br",
       screenshot: "/screenshots/petrobyteScreenshot.png",
       logo: "/portfolioLogos/logoPetrobyte.png",
@@ -57,7 +65,7 @@ export default function Portfolio() {
     },
     {
       name: "WhatsApp Link Generator",
-      tags: ["all", "all web", "open source", "nextjs"],
+      tags: [t.all, t.allweb, "open source", "nextjs"],
       link: "https://whatsapplinkgenerator.com",
       screenshot: "/screenshots/wppGenScreenshot.png",
       logo: "/portfolioLogos/logoWPPGenerator.png",
@@ -66,16 +74,16 @@ export default function Portfolio() {
   ];
 
   const [tags, setTags] = useState([
-    { name: "all", active: false },
-    { name: "all web", active: true },
+    { name: t.all, active: false },
+    { name: t.allweb, active: true },
     { name: "open source", active: false },
-    { name: "social media", active: false },
+    { name: t.socialmedia, active: false },
     { name: "php", active: false },
     { name: "nextjs", active: false },
     { name: "react", active: false },
   ]);
 
-  const [url, setUrl] = useState("project.com");
+  const [url, setUrl] = useState(t.projectcom);
   const [screenshot, setScreenshot] = useState(null);
   const [screenshotLoaded, setScreenshotLoaded] = useState(false);
   const [link, setLink] = useState(null);
@@ -97,13 +105,34 @@ export default function Portfolio() {
     });
   }, []);
 
+  useEffect(() => {
+    var tempTags = tags;
+    var initialTags = [
+      t.all,
+      t.allweb,
+      "open source",
+      t.socialmedia,
+      "php",
+      "nextjs",
+      "react",
+    ];
+    tempTags.forEach((tag, key) => {
+      tag.name = initialTags[key];
+    });
+    setTags(tempTags);
+    setUrl(t.projectcom);
+  }, [router.locale]);
+
   return (
     <section ref={titleRef}>
       <h1>Portfolio</h1>
       <div className="portfolio">
         <div className="browser" aria-hidden="true">
           {!screenshotLoaded && (
-            <img src={chooseProject} alt="Portfolio project screenshot" />
+            <img
+              src={router.locale == "en" ? chooseProject : chooseProjectPTBR}
+              alt={t.screenshotAlt}
+            />
           )}
           <a
             href={link}
@@ -118,14 +147,12 @@ export default function Portfolio() {
               onLoad={() => {
                 setScreenshotLoaded(true);
               }}
-              alt="Portfolio project screenshot"
+              alt={t.screenshotAlt}
             />
           </a>
-          <span aria-label="Porfolio project URL">{url}</span>
+          <span aria-label={t.projectURLAria}>{url}</span>
         </div>
-        <p className="pictureSubtitle">
-          click above to be redirected to project page
-        </p>
+        <p className="pictureSubtitle">{t.clickToRedirect}</p>
         <div className="tags">
           {tags.map((tag, key) => (
             <button

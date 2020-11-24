@@ -1,11 +1,24 @@
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
+
+//Other Libs
 import { useForm } from "react-hook-form";
 import axios from "axios";
 
+//Translations
+import translations from "../languages/translations";
+
 export default function HireMe() {
-  const [btnText, setBtnText] = useState("send");
+  const router = useRouter();
+  const t = translations[router.locale];
+
+  const [btnText, setBtnText] = useState(t.send);
   const [btnDisabled, setBtnDisabled] = useState(false);
   const [alert, setAlert] = useState({ message: "", type: "success" });
+
+  useEffect(() => {
+    setBtnText(t.send);
+  }, [router.locale]);
 
   const { register, handleSubmit, errors, reset } = useForm();
 
@@ -16,7 +29,7 @@ export default function HireMe() {
   }, [errors]);
 
   function sendEmail(data) {
-    setBtnText("loading...");
+    setBtnText(t.loading);
     setBtnDisabled(true);
 
     axios
@@ -24,7 +37,7 @@ export default function HireMe() {
       .then((res) => {
         if (res.status == 200) {
           setAlert({
-            message: "Message was sent! Thank you!",
+            message: t.successMsg,
             type: "success",
           });
         } else {
@@ -33,12 +46,12 @@ export default function HireMe() {
       })
       .catch(() => {
         setAlert({
-          message: "Something went wrong, try again later...",
+          message: t.errorMsg,
           type: "error",
         });
       })
       .finally(() => {
-        setBtnText("send");
+        setBtnText(t.send);
         setBtnDisabled(false);
         reset();
       });
@@ -52,8 +65,8 @@ export default function HireMe() {
     <section>
       <h1>Hire Me</h1>
       <form onSubmit={handleSubmit(sendEmail)} className="contactForm">
-        <label htmlFor="name">name</label>
-        {errors.name && <span className="alert error">Type your name</span>}
+        <label htmlFor="name">{t.name}</label>
+        {errors.name && <span className="alert error">{t.typeName}</span>}
         <input
           id="name"
           name="name"
@@ -63,9 +76,7 @@ export default function HireMe() {
           style={addErrorBorder(errors.name)}
         />
         <label htmlFor="email">e-mail</label>
-        {errors.email && (
-          <span className="alert error">Type a valid email address</span>
-        )}
+        {errors.email && <span className="alert error">{t.typeEmail}</span>}
         <input
           id="email"
           name="email"
@@ -79,12 +90,12 @@ export default function HireMe() {
           })}
           style={addErrorBorder(errors.email)}
         />
-        <label htmlFor="message">message</label>
-        {errors.message && <span className="alert error">Type a message</span>}
+        <label htmlFor="message">{t.message}</label>
+        {errors.message && <span className="alert error">{t.typeMessage}</span>}
         <textarea
           id="message"
           name="message"
-          placeholder="We need you to code our new Hoth defense system. Payment: 10,000 imperial credits."
+          placeholder={t.placeholderMessage}
           ref={register({ required: true })}
           style={addErrorBorder(errors.message)}
         />

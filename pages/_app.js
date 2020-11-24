@@ -16,6 +16,10 @@ import imgGithub from "../img/github-square-brands.svg";
 import imgLinkedin from "../img/linkedin-brands.svg";
 import imgBehance from "../img/behance-square-brands.svg";
 import imgBrazil from "../img/brazil-flag.svg";
+import imgCanada from "../img/canada-flag.svg";
+
+//Translations
+import translations from "../languages/translations";
 
 function App({ Component, pageProps }) {
   const router = useRouter();
@@ -25,11 +29,11 @@ function App({ Component, pageProps }) {
   const refPortfolio = useRef(null);
   const refHireMe = useRef(null);
 
+  const t = translations[router.locale];
+
   useEffect(() => {
-    console.log(
-      "Checking my code? I hope that's because you're thinking of hiring me! 😬"
-    );
-    console.log("This whole website project is available on my GitHub.");
+    console.log(t.checkingCode);
+    console.log(t.availableOnGit);
     console.log("https://github.com/gjmolter/personal-portfolio");
   }, []);
 
@@ -95,7 +99,7 @@ function App({ Component, pageProps }) {
           <li className="navbarItem">
             <Link href="/">
               <a ref={refHome}>
-                <img src={imgFingerprint} alt="Biography" />
+                <img src={imgFingerprint} alt={t.biography} />
                 <span>Bio</span>
               </a>
             </Link>
@@ -103,8 +107,8 @@ function App({ Component, pageProps }) {
           <li className="navbarItem">
             <Link href="/resume" id="resumeLink">
               <a ref={refResume}>
-                <img src={imgIdCard} alt="Resumé" />
-                <span>Resumé</span>
+                <img src={imgIdCard} alt={t.resume} />
+                <span>{t.resume}</span>
               </a>
             </Link>
           </li>
@@ -119,8 +123,8 @@ function App({ Component, pageProps }) {
           <li className="navbarItem">
             <Link href="/hireMe">
               <a ref={refHireMe}>
-                <img src={imgEnvelope} alt="Hire Me" />
-                <span>Hire Me</span>
+                <img src={imgEnvelope} alt={t.hireme} />
+                <span>{t.hireme}</span>
               </a>
             </Link>
           </li>
@@ -189,7 +193,7 @@ function App({ Component, pageProps }) {
             </li>
           </ul>
           <p className="fontAwesome">
-            the icons used on this website are from{" "}
+            {t.iconsFrom}{" "}
             <a
               href="https://fontawesome.com/"
               target="_blank"
@@ -200,10 +204,19 @@ function App({ Component, pageProps }) {
             </a>
           </p>
           <p className="languageSwitch">
-            <a href="https://br.gjmolter.com">
-              <span>Veja esse site em </span>
-              <img src={imgBrazil} alt="Ir para site em Português" />
-              <span> Português</span>
+            <a
+              onClick={() => {
+                router.push(router.pathname, router.pathname, {
+                  locale: router.locale == "en" ? "pt-BR" : "en",
+                });
+              }}
+            >
+              <span>{t.seeThisIn} </span>
+              <img
+                src={router.locale == "en" ? imgBrazil : imgCanada}
+                alt={t.getInLang}
+              />
+              <span> {t.languageName}</span>
             </a>
           </p>
         </footer>

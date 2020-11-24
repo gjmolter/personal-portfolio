@@ -1,3 +1,6 @@
+import { useRouter } from "next/router";
+
+//Images
 import imgRocket from "../img/rocket.svg";
 import imgWork from "../img/work-experience.svg";
 import imgEducation from "../img/education.svg";
@@ -8,95 +11,81 @@ import imgSkills from "../img/skills.svg";
 import imgCertifications from "../img/certifications.svg";
 import imgMicrosoft from "../img/microsoft-brands.svg";
 
+//Translations
+import translations from "../languages/translations";
+
 export default function Resume() {
+  const router = useRouter();
+  const t = translations[router.locale];
+
   return (
     <section>
-      <h1>Resumé</h1>
+      <h1>{t.resume}</h1>
       <div className="subtitleContainer">
-        <h2>Summary</h2>
-        <img src={imgRocket} alt="Rocket" aria-hidden="true" />
+        <h2>{t.summary}</h2>
+        <img src={imgRocket} alt={t.rocket} aria-hidden="true" />
       </div>
       <ul className="listResume">
-        <li>Full-stack developer, creative, fast learner and proactive.</li>
-        <li>More than 6 years of software development experience.</li>
-        <li>
-          Published 2 successful apps on the  AppStore, one of them reaching
-          Education Top 10 for Brazil in 2014.
-        </li>
+        <li>{t.fullstackDev}</li>
+        <li>{t.experienceYears}</li>
+        <li>{t.successfullApps}</li>
       </ul>
       <div className="subtitleContainer">
-        <h2>Work Experience</h2>
-        <img src={imgWork} alt="Man with tie" aria-hidden="true" />
+        <h2>{t.workExperience}</h2>
+        <img src={imgWork} alt={t.manWithTie} aria-hidden="true" />
       </div>
       <ul className="listResume">
         <li>
-          <strong>Web Developer​</strong> | 2014 - Present
+          <strong>{t.webDev}</strong> | 2014 - {t.present}
           <br />
           <strong>Freelancer</strong>
         </li>
-        <p>
-          {" "}
-          I've worked on web and mobile projects for different companies both in
-          Canada and Brazil. Some of these projects are displayed on my
-          portfolio page.
-        </p>
+        <p>{t.freelancerDesc}</p>
         <li>
-          <strong>Web Developer Trainee</strong> | November 2015 - June 2016
+          <strong>{t.webDevTrainee}</strong> | {t.webDevTraineeTimeframe}
           <br />
-          <strong>Ápia Consultoria &amp; Sistemas</strong> | Petrópolis, Brazil
+          <strong>Ápia Consultoria &amp; Sistemas</strong> | {t.petropolis}
         </li>
-        <p>
-          {" "}
-          Here I've created ecommerce websites using CiaShop framework, HTML,
-          CSS and JS. I was also helping other teams with different technologies
-          when needed (iOS development, mostly). My team's main goal was to
-          develop conversion-oriented front-ends that were easy to maintain,
-          with clean and readable code.
-        </p>
+        <p>{t.apiaDesc}</p>
       </ul>
       <div className="subtitleContainer">
-        <h2>Education</h2>
-        <img src={imgEducation} alt="Mortarboard" aria-hidden="true" />
+        <h2>{t.education}</h2>
+        <img src={imgEducation} alt={t.mortarboard} aria-hidden="true" />
       </div>
       <ul className="listResume">
         <li>
-          <strong>Information Technology</strong> | October 2017 - Present
+          <strong>{t.infoTech}</strong> | {t.infoTechTimeframe}
           <br />
-          <strong>Canadian College</strong> | Vancouver, Canada
+          <strong>Canadian College</strong> | Vancouver, {t.canada}
         </li>
         <li>
-          <strong>Advanced Business Administration</strong> | August 2016 -
-          August 2017
+          <strong>Advanced Business Management</strong> | {t.abmTimeframe}
           <br />
-          <strong>Sprott Shaw</strong> | Vancouver, Canada
+          <strong>Sprott Shaw</strong> | Vancouver, {t.canada}
         </li>
         <li>
-          <strong>Web Front-End</strong> | May 2014 - November 2014
+          <strong>Web Front-End</strong> | {t.webFrontendTimeframe}
           <br />
-          <strong>Instituto Infnet</strong> | Rio de Janeiro, Brazil
+          <strong>Instituto Infnet</strong> | {t.rio}
         </li>
       </ul>
       <div className="subtitleContainer">
-        <h2>Languages</h2>
-        <img
-          src={imgLanguages}
-          alt="Comics talking bubble"
-          aria-hidden="true"
-        />
+        <h2>{t.languages}</h2>
+        <img src={imgLanguages} alt={t.talkingBubble} aria-hidden="true" />
       </div>
       <div className="iconAndText">
         <div>
-          <img src={imgCanada} alt="Canadian flag" aria-hidden="true" />
-          <span>English</span>
+          <img src={imgCanada} alt={t.canadianFlag} aria-hidden="true" />
+          <span>{t.english}</span>
         </div>
         <div>
-          <img src={imgBrazil} alt="Brazilian flag" aria-hidden="true" />
-          <span>Portuguese</span>
+          <img src={imgBrazil} alt={t.brazilFlag} aria-hidden="true" />
+          <span>{t.portuguese}</span>
         </div>
       </div>
       <div className="subtitleContainer">
-        <h2>IT Skills</h2>
-        <img src={imgSkills} alt="Laptop with code" aria-hidden="true" />
+        <h2>{t.itskills}</h2>
+        <img src={imgSkills} alt={t.laptopWCode} aria-hidden="true" />
       </div>
       <ul className="listResume">
         <li>HTML &amp; CSS</li>
@@ -105,11 +94,11 @@ export default function Resume() {
         <li>NodeJS</li>
         <li>Git</li>
         <li>UI &amp; UX</li>
-        <li>Graphic Design</li>
+        <li>{t.graphicDesign}</li>
       </ul>
       <div className="subtitleContainer">
-        <h2>Certifications</h2>
-        <img src={imgCertifications} alt="Badge" aria-hidden="true" />
+        <h2>{t.certifications}</h2>
+        <img src={imgCertifications} alt={t.badge} aria-hidden="true" />
       </div>
       <div className="iconAndText">
         <a

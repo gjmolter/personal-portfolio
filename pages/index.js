@@ -1,6 +1,13 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
+
+//Translations
+import translations from "../languages/translations";
 
 export default function Home() {
+  const router = useRouter();
+  const t = translations[router.locale];
+
   function getMyAge() {
     var today = new Date();
     var birthDate = new Date("1997-11-18");
@@ -15,12 +22,13 @@ export default function Home() {
   return (
     <section>
       <div className="faceCircle" />
-      <h1>Hey, my name is Gabriel Molter.</h1>
+      <h1>{t.heyMyName}.</h1>
       <p>
-        In a hurry? Go straight to my <Link href="/portfolio">Portfolio</Link>.
+        {t.inAHurry}
+        <Link href="/portfolio">Portfolio</Link>.
       </p>
       <p>
-        I am a {getMyAge()}-year-old full stack developer from{" "}
+        {`${t.beforeAge} ${getMyAge()}${t.afterAge} `}
         <a
           href="https://www.google.com.br/maps/place/Petr%C3%B3polis,+RJ/"
           target="_blank"
@@ -28,7 +36,7 @@ export default function Home() {
         >
           Petrópolis, Brazil
         </a>
-        , currently living in{" "}
+        , {`${t.currentlyLiving} `}
         <a
           href="https://www.google.com.br/maps/place/Vancouver,+BC"
           target="_blank"
@@ -38,27 +46,23 @@ export default function Home() {
         </a>
         .<br />
         <br />
-        I've started working with web development back in 2011, when I was about
-        14 years old, designing and implementing Flash websites.
+        {t.startedWorking}
         <br />
         <br />
-        Also in 2011, I started developing iOS apps. The first app I released on
-        the AppStore made it to the Top 10 Educational Apps in Brazil.
+        {t.alsoIn2011}
         <br />
         <br />
-        In 2015 I switched my attention back to web development and started
-        studying towards my{" "}
+        {`${t.in2015} `}
         <a
           href="https://www.youracclaim.com/badges/73c5d0e8-9412-427f-86dc-a155cc276c20/public_url"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Microsoft HTML5, CSS3 and JS certification, which I got in 2016
+          {t.microsoftCertificate}
         </a>
         .<br />
         <br />
-        As of today, I am an IT student, and a Freelancer for companies both in
-        Canada and Brazil.
+        {t.asOfToday}
       </p>
     </section>
   );

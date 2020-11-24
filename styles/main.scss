@@ -231,6 +231,10 @@ footer {
     justify-content: center;
     a {
       display: flex;
+      cursor: pointer;
+      &:hover {
+        opacity: 0.8;
+      }
       img {
         width: 20px;
         margin: 0 5px;
