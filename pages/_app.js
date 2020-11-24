@@ -23,13 +23,12 @@ import translations from "../languages/translations";
 
 function App({ Component, pageProps }) {
   const router = useRouter();
+  const t = translations[router.locale];
 
   const refHome = useRef(null);
   const refResume = useRef(null);
   const refPortfolio = useRef(null);
   const refHireMe = useRef(null);
-
-  const t = translations[router.locale];
 
   useEffect(() => {
     console.log(t.checkingCode);
@@ -87,6 +86,16 @@ function App({ Component, pageProps }) {
         <meta name="theme-color" content="#070b24" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://gjmolter.com" />
+
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-CV0FZ34LR2"
+        ></script>
+        <script>
+          window.dataLayer = window.dataLayer || []; function gtag()
+          {dataLayer.push(arguments)}
+          gtag('js', new Date()); gtag('config', 'G-CV0FZ34LR2');
+        </script>
       </Head>
       <nav>
         <ul className="navbar">
