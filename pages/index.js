@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
+import Head from "next/head";
 
 //Translations
 import translations from "../languages/translations";
@@ -21,6 +22,9 @@ export default function Home() {
 
   return (
     <section>
+      <Head>
+        <title>Gabriel Molter</title>
+      </Head>
       <div className="faceCircle" />
       <h1>{t.heyMyName}.</h1>
       <p>

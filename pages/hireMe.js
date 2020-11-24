@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import Head from "next/head";
 
 //Other Libs
 import { useForm } from "react-hook-form";
@@ -63,6 +64,9 @@ export default function HireMe() {
 
   return (
     <section>
+      <Head>
+        <title>{t.hireme} - Gabriel Molter</title>
+      </Head>
       <h1>Hire Me</h1>
       <form onSubmit={handleSubmit(sendEmail)} className="contactForm">
         <label htmlFor="name">{t.name}</label>

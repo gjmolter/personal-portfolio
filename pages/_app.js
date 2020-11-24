@@ -37,6 +37,15 @@ function App({ Component, pageProps }) {
   }, []);
 
   useEffect(() => {
+    if (window) {
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-CV0FZ34LR2");
+    }
+
     if (
       refHome.current &&
       refResume.current &&
@@ -71,7 +80,7 @@ function App({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <meta charset="UTF-8" />
+        <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Gabriel Molter</title>
         <meta
@@ -91,11 +100,6 @@ function App({ Component, pageProps }) {
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-CV0FZ34LR2"
         ></script>
-        <script>
-          window.dataLayer = window.dataLayer || []; function gtag()
-          {dataLayer.push(arguments)}
-          gtag('js', new Date()); gtag('config', 'G-CV0FZ34LR2');
-        </script>
       </Head>
       <nav>
         <ul className="navbar">

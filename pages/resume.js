@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import Head from "next/head";
 
 //Images
 import imgRocket from "../img/rocket.svg";
@@ -20,6 +21,9 @@ export default function Resume() {
 
   return (
     <section>
+      <Head>
+        <title>{t.resume} - Gabriel Molter</title>
+      </Head>
       <h1>{t.resume}</h1>
       <div className="subtitleContainer">
         <h2>{t.summary}</h2>

@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import NextImage from "next/image";
 import { useRouter } from "next/router";
+import Head from "next/head";
 
 //Images
 import chooseProject from "../img/chooseProject.png";
@@ -125,6 +126,9 @@ export default function Portfolio() {
 
   return (
     <section ref={titleRef}>
+      <Head>
+        <title>Portfolio - Gabriel Molter</title>
+      </Head>
       <h1>Portfolio</h1>
       <div className="portfolio">
         <div className="browser" aria-hidden="true">
