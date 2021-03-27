@@ -1,6 +1,6 @@
 ## This is my portfolio website.
 
-You can see it in it's full glory at: [gabrielmolter.com](https://gabrielmolter.com)
+You can see it running at: [gabrielmolter.com](https://gabrielmolter.com)
 
 Frontend is NextJS, with statically generated pages.
 
