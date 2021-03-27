@@ -23,6 +23,7 @@ export default function Resume() {
     <section>
       <Head>
         <title>{t.resume} - Gabriel Molter</title>
+        <meta property="og:url" content="https://gabrielmolter.com/resume" />
       </Head>
       <h1>{t.resume}</h1>
       <div className="subtitleContainer">

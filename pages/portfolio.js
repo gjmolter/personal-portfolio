@@ -152,6 +152,7 @@ export default function Portfolio() {
     <section ref={titleRef}>
       <Head>
         <title>Portfolio - Gabriel Molter</title>
+        <meta property="og:url" content="https://gabrielmolter.com/portfolio" />
       </Head>
       <h1>Portfolio</h1>
       <div className="portfolio">

@@ -66,6 +66,7 @@ export default function HireMe() {
     <section>
       <Head>
         <title>{t.hireme} - Gabriel Molter</title>
+        <meta property="og:url" content="https://gabrielmolter.com/hireMe" />
       </Head>
       <h1>Hire Me</h1>
       <form onSubmit={handleSubmit(sendEmail)} className="contactForm">

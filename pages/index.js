@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Head from "next/head";
+import { useMemo } from "react";
 
 //Translations
 import translations from "../languages/translations";
@@ -9,21 +10,20 @@ export default function Home() {
   const router = useRouter();
   const t = translations[router.locale];
 
-  function getMyAge() {
+  const myAge = useMemo(() => {
     var today = new Date();
     var birthDate = new Date("1997-11-18");
     var age = today.getFullYear() - birthDate.getFullYear();
     var m = today.getMonth() - birthDate.getMonth();
-    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-      age--;
-    }
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) age--;
     return age;
-  }
+  });
 
   return (
     <section>
       <Head>
         <title>Gabriel Molter</title>
+        <meta property="og:url" content="https://gabrielmolter.com/" />
       </Head>
       <div className="faceCircle" />
       <h1>{t.heyMyName}.</h1>
@@ -32,7 +32,7 @@ export default function Home() {
         <Link href="/portfolio">Portfolio</Link>.
       </p>
       <p>
-        {`${t.beforeAge} ${getMyAge()}${t.afterAge} `}
+        {`${t.beforeAge} ${myAge}${t.afterAge} `}
         <a
           href="https://www.google.com.br/maps/place/Petr%C3%B3polis,+RJ/"
           target="_blank"

@@ -96,6 +96,18 @@ function App({ Component, pageProps }) {
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://gjmolter.com" />
 
+        <meta property="og:title" content="Gabriel Molter" />
+        <meta
+          property="og:description"
+          content="Freelance Experienced Web Developer"
+        />
+        <meta
+          property="og:image"
+          content="https://gabrielmolter.com/shareImg.png"
+        />
+
+        <meta name="twitter:card" content="summary_large_image" />
+
         <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-CV0FZ34LR2"
