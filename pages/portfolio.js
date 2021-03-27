@@ -25,6 +25,22 @@ export default function Portfolio() {
       label: "RevoCalendar React Component",
     },
     {
+      name: "Dilua Lingerie",
+      tags: [t.all, t.allweb, "react", "nextjs", "e-commerce"],
+      link: "https://dilualingerie.com.br",
+      screenshot: "/screenshots/diluaScreenshot.png",
+      logo: "/portfolioLogos/logoDilua.png",
+      label: "Dilua Lingerie E-Commerce",
+    },
+    {
+      name: "Pix Charge",
+      tags: [t.all, t.allweb, "open source"],
+      link: "https://github.com/gjmolter/pix-charge",
+      screenshot: "/screenshots/pixchargeScreenshot.png",
+      logo: "/portfolioLogos/logoPixCharge.png",
+      label: "Pix Charging Library",
+    },
+    {
       name: "Chilly Capybara",
       tags: [t.all, t.allweb, "react", "nextjs"],
       link: "https://chillycapybara.com",
@@ -102,10 +118,11 @@ export default function Portfolio() {
     { name: t.all, active: false },
     { name: t.allweb, active: true },
     { name: "open source", active: false },
-    { name: t.socialmedia, active: false },
-    { name: "php", active: false },
     { name: "nextjs", active: false },
     { name: "react", active: false },
+    { name: "e-commerce", active: false },
+    { name: t.socialmedia, active: false },
+    { name: "php", active: false },
   ]);
 
   const [url, setUrl] = useState(t.projectcom);
@@ -136,10 +153,11 @@ export default function Portfolio() {
       t.all,
       t.allweb,
       "open source",
-      t.socialmedia,
-      "php",
       "nextjs",
       "react",
+      "e-commerce",
+      t.socialmedia,
+      "php",
     ];
     tempTags.forEach((tag, key) => {
       tag.name = initialTags[key];
@@ -218,8 +236,10 @@ export default function Portfolio() {
               }
               onClick={() => {
                 setUrl(job.link);
-                setScreenshot(job.screenshot);
-                setScreenshotLoaded(false);
+                if (screenshot !== job.screenshot) {
+                  setScreenshotLoaded(false);
+                  setScreenshot(job.screenshot);
+                }
                 setLink(job.link);
                 titleRef.current.scrollIntoView({ behavior: "smooth" });
               }}
