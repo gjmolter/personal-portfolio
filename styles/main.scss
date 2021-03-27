@@ -165,11 +165,6 @@ nav {
     }
     color: $orange !important;
   }
-  @media (min-width: $break-mobile) {
-    &:hover + main {
-      margin-left: 16rem;
-    }
-  }
 }
 
 main {
