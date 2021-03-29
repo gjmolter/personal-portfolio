@@ -66,8 +66,10 @@ export default {
     apiaDesc:
       "Here I've created ecommerce websites using CiaShop framework, HTML, CSS and JS. I was also helping other teams with different technologies when needed (iOS development, mostly). My team's main goal was to develop conversion-oriented front-ends that were easy to maintain, with clean and readable code.",
     education: "Education",
+    computerStudies: "Computer Studies",
+    computerStudiesTimeframe: "January 2021 - Present",
     infoTech: "Information Technology",
-    infoTechTimeframe: "October 2017 - Present",
+    infoTechTimeframe: "October 2017 - December 2019",
     canada: "Canada",
     abmTimeframe: "August 2016 - August 2017",
     webFrontendTimeframe: "May 2014 - November 2014",
@@ -155,8 +157,10 @@ export default {
     apiaDesc:
       "Aqui eu criei sites de e-commerce usando o framework da CiaShop, HTML, CSS e JS. Eu também ajudava outros times com tecnologias diferentes quando necessário (Desenvolvimento iOS, normalmente) O principal objetivo do meu time era criar front-ends orientados para a conversão que fossem fáceis de manter com código limpo e legível.",
     education: "Educação",
+    computerStudies: "Ciência da Computação",
+    computerStudiesTimeframe: "January 2021 - Presente",
     infoTech: "Tecnologia da Informação",
-    infoTechTimeframe: "Outubro de 2017 - Presente",
+    infoTechTimeframe: "Outubro de 2017 - Dezembro de 2019",
     canada: "Canadá",
     abmTimeframe: "Agosto de 2016 - Agosto de 2017",
     webFrontendTimeframe: "Maio de 2014 - Novembro de 2014",

@@ -59,6 +59,11 @@ export default function Resume() {
       </div>
       <ul className="listResume">
         <li>
+          <strong>{t.computerStudies}</strong> | {t.computerStudiesTimeframe}
+          <br />
+          <strong>Langara College</strong> | Vancouver, {t.canada}
+        </li>
+        <li>
           <strong>{t.infoTech}</strong> | {t.infoTechTimeframe}
           <br />
           <strong>Canadian College</strong> | Vancouver, {t.canada}
