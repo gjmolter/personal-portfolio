@@ -107,7 +107,7 @@ export default function Portfolio() {
     {
       name: "WhatsApp Link Generator",
       tags: [t.all, t.allweb, "open source", "nextjs"],
-      link: "https://whatsapplinkgenerator.com",
+      link: "https://whatsapp-links.netlify.app/",
       screenshot: "/screenshots/wppGenScreenshot.png",
       logo: "/portfolioLogos/logoWPPGenerator.png",
       label: "WhatsApp Link Generator",
