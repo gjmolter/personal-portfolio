@@ -81,20 +81,20 @@ export default function Portfolio() {
       label: "PetroByte Website",
     },
     {
+      name: "IveTravelled.World",
+      tags: [t.all, t.allweb, "react", "nextjs"],
+      link: "https://ivetravelled.world/",
+      screenshot: "/screenshots/ivetravelledScreenshot.png",
+      logo: "/portfolioLogos/logoIveTravelled.png",
+      label: "IveTravelled.World Website",
+    },
+    {
       name: "PetroByte",
       tags: [t.all, t.socialmedia],
       link: "https://www.instagram.com/petrobyteinformatica/",
       screenshot: "/screenshots/petrobyteInstaScreenshot.png",
       logo: "/portfolioLogos/logoPetrobyte.png",
       label: "PetroByte Social Media",
-    },
-    {
-      name: "Manipulando Saúde",
-      tags: [t.all, t.socialmedia],
-      link: "https://www.instagram.com/msmanipulandosaude/",
-      screenshot: "/screenshots/msInstaScreenshot.png",
-      logo: "/portfolioLogos/logoMS.png",
-      label: "Manipulando Saúde Social Media",
     },
     {
       name: "CERDO",
