@@ -1,17 +1,6 @@
 import { useRouter } from "next/router";
 import Head from "next/head";
 
-//Images
-import imgRocket from "../img/rocket.svg";
-import imgWork from "../img/work-experience.svg";
-import imgEducation from "../img/education.svg";
-import imgLanguages from "../img/languages.svg";
-import imgCanada from "../img/canada-flag.svg";
-import imgBrazil from "../img/brazil-flag.svg";
-import imgSkills from "../img/skills.svg";
-import imgCertifications from "../img/certifications.svg";
-import imgMicrosoft from "../img/microsoft-brands.svg";
-
 //Translations
 import translations from "../languages/translations";
 
@@ -28,16 +17,17 @@ export default function Resume() {
       <h1>{t.resume}</h1>
       <div className="subtitleContainer">
         <h2>{t.summary}</h2>
-        <img src={imgRocket} alt={t.rocket} aria-hidden="true" />
+        <img src="/img/rocket.svg" alt={t.rocket} aria-hidden="true" />
       </div>
       <ul className="listResume">
         <li>{t.fullstackDev}</li>
         <li>{t.experienceYears}</li>
         <li>{t.successfullApps}</li>
+        <li>{t.successfullSites}</li>
       </ul>
       <div className="subtitleContainer">
         <h2>{t.workExperience}</h2>
-        <img src={imgWork} alt={t.manWithTie} aria-hidden="true" />
+        <img src="/img/work-experience.svg" alt={t.manWithTie} aria-hidden="true" />
       </div>
       <ul className="listResume">
         <li>
@@ -47,6 +37,12 @@ export default function Resume() {
         </li>
         <p>{t.freelancerDesc}</p>
         <li>
+          <strong>{t.webDev}</strong> | 2021 - {t.present}
+          <br />
+          <strong>Ballistic Arts</strong>
+        </li>
+        <p>{t.baDesc}</p>
+        <li>
           <strong>{t.webDevTrainee}</strong> | {t.webDevTraineeTimeframe}
           <br />
           <strong>Ápia Consultoria &amp; Sistemas</strong> | {t.petropolis}
@@ -55,7 +51,7 @@ export default function Resume() {
       </ul>
       <div className="subtitleContainer">
         <h2>{t.education}</h2>
-        <img src={imgEducation} alt={t.mortarboard} aria-hidden="true" />
+        <img src="/img/education.svg" alt={t.mortarboard} aria-hidden="true" />
       </div>
       <ul className="listResume">
         <li>
@@ -81,21 +77,21 @@ export default function Resume() {
       </ul>
       <div className="subtitleContainer">
         <h2>{t.languages}</h2>
-        <img src={imgLanguages} alt={t.talkingBubble} aria-hidden="true" />
+        <img src="/img/languages.svg" alt={t.talkingBubble} aria-hidden="true" />
       </div>
       <div className="iconAndText">
         <div>
-          <img src={imgCanada} alt={t.canadianFlag} aria-hidden="true" />
+          <img src="/img/canada-flag.svg" alt={t.canadianFlag} aria-hidden="true" />
           <span>{t.english}</span>
         </div>
         <div>
-          <img src={imgBrazil} alt={t.brazilFlag} aria-hidden="true" />
+          <img src="/img/brazil-flag.svg" alt={t.brazilFlag} aria-hidden="true" />
           <span>{t.portuguese}</span>
         </div>
       </div>
       <div className="subtitleContainer">
         <h2>{t.itskills}</h2>
-        <img src={imgSkills} alt={t.laptopWCode} aria-hidden="true" />
+        <img src="/img/skills.svg" alt={t.laptopWCode} aria-hidden="true" />
       </div>
       <ul className="listResume">
         <li>HTML &amp; CSS</li>
@@ -108,7 +104,7 @@ export default function Resume() {
       </ul>
       <div className="subtitleContainer">
         <h2>{t.certifications}</h2>
-        <img src={imgCertifications} alt={t.badge} aria-hidden="true" />
+        <img src="/img/certifications.svg" alt={t.badge} aria-hidden="true" />
       </div>
       <div className="iconAndText">
         <a
@@ -116,7 +112,7 @@ export default function Resume() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src={imgMicrosoft} alt="Microsoft logo" aria-hidden="true" />
+          <img src="/img/microsoft-brands.svg" alt="Microsoft logo" aria-hidden="true" />
           <span>
             Microsoft 70-480: Programming in HTML5 with JavaScript and CSS3
           </span>

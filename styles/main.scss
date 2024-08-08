@@ -14,30 +14,37 @@ $break-mobile: 680px;
     display: none !important;
   }
 }
+
 html,
 body {
   height: 100%;
   overflow-x: hidden;
   margin: 0;
 }
+
 body {
   background: radial-gradient(circle, #090d26 0%, #070b24 100%);
 }
+
 *:focus {
   outline: none;
 }
+
 * {
   box-sizing: border-box;
 }
+
 .preload * {
   transition: none !important;
 }
+
 :root {
   -webkit-font-smoothing: antialiased;
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
   color: $text-gray;
 }
+
 nav {
   .navbar {
     display: flex;
@@ -74,12 +81,15 @@ nav {
       }
     }
   }
+
   .social {
     @include hideOnMobile;
   }
+
   .startSocialMedia {
     margin-top: auto;
   }
+
   .navbarItem {
     width: 100%;
     display: flex;
@@ -87,6 +97,7 @@ nav {
 
     &:first-child {
       margin-bottom: 3rem;
+
       button {
         cursor: default;
         color: $orange;
@@ -94,10 +105,12 @@ nav {
         background: none;
         border: none;
       }
+
       span {
         font-weight: 900;
         font-style: italic;
       }
+
       @include hideOnMobile;
     }
 
@@ -120,6 +133,7 @@ nav {
         max-width: 40px;
         min-width: 40px;
         transition: transform 300ms ease;
+
         @media (max-width: $break-mobile) {
           max-width: 30px;
           min-width: 30px;
@@ -155,10 +169,12 @@ nav {
       }
     }
   }
+
   .currentPage {
     img {
       filter: none !important;
     }
+
     color: $orange !important;
   }
 }
@@ -192,39 +208,50 @@ footer {
     justify-content: center;
     gap: 0.8rem;
     margin-top: 2rem;
+
     .navbarItem {
       filter: grayscale(1) brightness(2);
+
       &:hover {
         filter: none;
       }
+
       width: 40px;
     }
+
     @media (max-width: $break-mobile) {
       display: flex;
     }
   }
+
   p {
     font-size: 0.6rem;
     opacity: 0.5;
     margin: 2rem 0 0;
+
     a {
       color: #d3d3d3;
     }
   }
+
   .fontAwesome {
     text-align: center;
     line-height: 1.5;
   }
+
   .languageSwitch {
     opacity: 1;
     display: flex;
     justify-content: center;
+
     a {
       display: flex;
       cursor: pointer;
+
       &:hover {
         opacity: 0.8;
       }
+
       img {
         width: 20px;
         margin: 0 5px;
@@ -239,9 +266,11 @@ h2 {
   font-style: italic;
   color: $orange;
 }
+
 h1 {
   font-size: 2.2rem;
 }
+
 h2 {
   font-size: 1.2rem;
   margin: 0;
@@ -252,12 +281,15 @@ a {
   text-decoration: none;
   font-weight: bold;
 }
+
 p {
   line-height: 1.4rem;
 }
+
 ul {
   list-style: none;
 }
+
 textarea {
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
@@ -266,6 +298,7 @@ textarea {
 }
 
 .contactForm {
+
   input,
   textarea {
     width: 100%;
@@ -287,8 +320,9 @@ textarea {
     border: none;
     border-radius: 10px;
     min-height: 2.5rem;
-    width: 7.5rem;
+    min-width: 7.5rem;
     float: right;
+    padding-inline: 1rem;
     margin-top: 1rem;
     font-size: 1.2rem;
     font-weight: 900;
@@ -307,15 +341,18 @@ textarea {
   line-height: 1.5rem;
   margin: 0;
 }
+
 .formAlert {
   text-align: center;
   font-weight: bolder;
   margin: 0.5rem;
   font-size: 1rem;
 }
+
 .success {
   color: #0a9f40;
 }
+
 .error {
   color: #d22828;
 }
@@ -426,7 +463,7 @@ textarea {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url("../img/myFace.png");
+    background: url("/img/myFace.png");
     background-size: 100%;
     filter: grayscale(100%);
   }
@@ -484,6 +521,7 @@ textarea {
       //height: 140px;
       opacity: 0;
       cursor: pointer;
+
       &.active {
         opacity: 1;
         width: 150px;
@@ -505,7 +543,7 @@ textarea {
   }
 
   .browser {
-    background-image: url("../img/browserFrame.png");
+    background-image: url("/img/browserFrame.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     box-shadow: 0 30px 20px -8px rgba(0, 0, 0, 0.4);
@@ -537,6 +575,7 @@ textarea {
 
 .notFound {
   text-align: center;
+
   .travolta {
     width: 200px;
     height: 200px;

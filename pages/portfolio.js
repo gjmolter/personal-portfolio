@@ -3,10 +3,6 @@ import NextImage from "next/image";
 import { useRouter } from "next/router";
 import Head from "next/head";
 
-//Images
-import chooseProject from "../img/chooseProject.png";
-import chooseProjectPTBR from "../img/chooseProjectPTBR.png";
-
 //Translations
 import translations from "../languages/translations";
 
@@ -18,31 +14,31 @@ export default function Portfolio() {
   const jobs = [
     {
       name: "RevoCalendar Component",
-      tags: [t.all, t.allweb, "open source", "react"],
+      tags: [t.all, "open source", "react"],
       link: "https://gjmolter.github.io/revo-calendar/",
       screenshot: "/screenshots/revoScreenshot.png",
       logo: "/portfolioLogos/logoRevoCalendar.png",
       label: "RevoCalendar React Component",
     },
     {
+      name: "I've Travelled",
+      tags: [t.all, "react", "nextjs"],
+      link: "https://worldtraveller.vercel.app/",
+      screenshot: "/screenshots/ivetravelledScreenshot.png",
+      logo: "/portfolioLogos/logoIveTravelled.png",
+      label: "IveTravelled.World Website",
+    },
+    {
       name: "Dilua Lingerie",
-      tags: [t.all, t.allweb, "react", "nextjs", "e-commerce"],
+      tags: [t.all, "react", "nextjs", "e-commerce"],
       link: "https://dilualingerie.com.br",
       screenshot: "/screenshots/diluaScreenshot.png",
       logo: "/portfolioLogos/logoDilua.png",
       label: "Dilua Lingerie E-Commerce",
     },
     {
-      name: "Pix Charge",
-      tags: [t.all, t.allweb, "open source"],
-      link: "https://github.com/gjmolter/pix-charge",
-      screenshot: "/screenshots/pixchargeScreenshot.png",
-      logo: "/portfolioLogos/logoPixCharge.png",
-      label: "Pix Charging Library",
-    },
-    {
       name: "Chilly Capybara",
-      tags: [t.all, t.allweb, "react", "nextjs"],
+      tags: [t.all, "react", "nextjs"],
       link: "https://chillycapybara.com",
       screenshot: "/screenshots/chillycapybaraScreenshot.png",
       logo: "/portfolioLogos/logoChilly.png",
@@ -50,7 +46,7 @@ export default function Portfolio() {
     },
     {
       name: "Petrótica",
-      tags: [t.all, t.allweb, "php"],
+      tags: [t.all, "php"],
       link: "http://petrotica.com.br",
       screenshot: "/screenshots/petroticaScreenshot.png",
       logo: "/portfolioLogos/logoPetrotica.png",
@@ -58,7 +54,7 @@ export default function Portfolio() {
     },
     {
       name: "Tribuna de Petrópolis",
-      tags: [t.all, t.allweb, "php"],
+      tags: [t.all, "php"],
       link: "https://tribunadepetropolis.com.br",
       screenshot: "/screenshots/tribunaScreenshot.png",
       logo: "/portfolioLogos/logoTribuna.png",
@@ -66,7 +62,7 @@ export default function Portfolio() {
     },
     {
       name: "Gabriela Mussel",
-      tags: [t.all, t.allweb, "react", "nextjs"],
+      tags: [t.all, "react", "nextjs"],
       link: "https://gabrielamussel.com.br",
       screenshot: "/screenshots/dragabrielamusselsiteScreenshot.png",
       logo: "/portfolioLogos/logoGabi.png",
@@ -74,55 +70,18 @@ export default function Portfolio() {
     },
     {
       name: "PetroByte",
-      tags: [t.all, t.allweb, "react", "nextjs"],
+      tags: [t.all, "react", "nextjs"],
       link: "https://petrobyte.com.br",
       screenshot: "/screenshots/petrobyteScreenshot.png",
       logo: "/portfolioLogos/logoPetrobyte.png",
       label: "PetroByte Website",
     },
-    {
-      name: "IveTravelled.World",
-      tags: [t.all, t.allweb, "react", "nextjs"],
-      link: "https://ivetravelled.world/",
-      screenshot: "/screenshots/ivetravelledScreenshot.png",
-      logo: "/portfolioLogos/logoIveTravelled.png",
-      label: "IveTravelled.World Website",
-    },
-    {
-      name: "PetroByte",
-      tags: [t.all, t.socialmedia],
-      link: "https://www.instagram.com/petrobyteinformatica/",
-      screenshot: "/screenshots/petrobyteInstaScreenshot.png",
-      logo: "/portfolioLogos/logoPetrobyte.png",
-      label: "PetroByte Social Media",
-    },
-    {
-      name: "CERDO",
-      tags: [t.all, t.socialmedia],
-      link: "https://www.instagram.com/cerdoradiologia/",
-      screenshot: "/screenshots/cerdoInstaScreenshot.png",
-      logo: "/portfolioLogos/logoCerdo.png",
-      label: "CERDO Social Media",
-    },
-    {
-      name: "WhatsApp Link Generator",
-      tags: [t.all, t.allweb, "open source", "nextjs"],
-      link: "https://whatsapp-links.netlify.app/",
-      screenshot: "/screenshots/wppGenScreenshot.png",
-      logo: "/portfolioLogos/logoWPPGenerator.png",
-      label: "WhatsApp Link Generator",
-    },
   ];
 
   const [tags, setTags] = useState([
-    { name: t.all, active: false },
-    { name: t.allweb, active: true },
+    { name: t.all, active: true },
     { name: "open source", active: false },
-    { name: "nextjs", active: false },
-    { name: "react", active: false },
     { name: "e-commerce", active: false },
-    { name: t.socialmedia, active: false },
-    { name: "php", active: false },
   ]);
 
   const [url, setUrl] = useState(t.projectcom);
@@ -151,13 +110,8 @@ export default function Portfolio() {
     var tempTags = tags;
     var initialTags = [
       t.all,
-      t.allweb,
       "open source",
-      "nextjs",
-      "react",
       "e-commerce",
-      t.socialmedia,
-      "php",
     ];
     tempTags.forEach((tag, key) => {
       tag.name = initialTags[key];
@@ -177,7 +131,7 @@ export default function Portfolio() {
         <div className="browser" aria-hidden="true">
           {!screenshotLoaded && (
             <img
-              src={router.locale == "en" ? chooseProject : chooseProjectPTBR}
+              src={router.locale == "en" ? "/img/chooseProject.png" : "/img/chooseProjectPTBR.png"}
               alt={t.screenshotAlt}
             />
           )}

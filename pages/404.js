@@ -1,9 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-//Images
-import johnTravolta from "../img/johntravolta.gif";
-
 //Translations
 import translations from "../languages/translations";
 
@@ -14,7 +11,7 @@ export default function NotFound() {
   return (
     <section className="notFound">
       <div className="travolta">
-        <img src={johnTravolta} alt={t.confusedJohn} />
+        <img src="/img/johntravolta.gif" alt={t.confusedJohn} />
       </div>
       <h1>{t.thisIsEmbarrassing}</h1>
       <p>

@@ -6,18 +6,6 @@ import { useRouter } from "next/router";
 //Styles
 import "../styles/main.scss";
 
-//Images
-import imgDoubleRight from "../img/angle-double-right-solid.svg";
-import imgFingerprint from "../img/fingerprint-solid.svg";
-import imgIdCard from "../img/id-card-solid.svg";
-import imgCode from "../img/code-solid.svg";
-import imgEnvelope from "../img/envelope-open-text-solid.svg";
-import imgGithub from "../img/github-square-brands.svg";
-import imgLinkedin from "../img/linkedin-brands.svg";
-import imgBehance from "../img/behance-square-brands.svg";
-import imgBrazil from "../img/brazil-flag.svg";
-import imgCanada from "../img/canada-flag.svg";
-
 //Translations
 import translations from "../languages/translations";
 
@@ -57,23 +45,19 @@ function App({ Component, pageProps }) {
       refPortfolio.current.classList.remove("currentPage");
       refHireMe.current.classList.remove("currentPage");
 
-      switch (router.pathname) {
-        case "/":
-          refHome.current.classList.add("currentPage");
-          break;
-        case "/resume":
-          refResume.current.classList.add("currentPage");
-          break;
-        case "/portfolio":
-          refPortfolio.current.classList.add("currentPage");
-          break;
-        case "/hireme":
-          refHireMe.current.classList.add("currentPage");
-          break;
-
-        default:
-          break;
+      if (router.pathname === "/") {
+        refHome.current.classList.add("currentPage");
       }
+      if (router.pathname.includes("/resume")) {
+        refResume.current.classList.add("currentPage");
+      }
+      if (router.pathname.includes("/portfolio")) {
+        refPortfolio.current.classList.add("currentPage");
+      }
+      if (router.pathname.includes("/hireMe")) {
+        refHireMe.current.classList.add("currentPage");
+      }
+
     }
   }, [router.pathname]);
 
@@ -117,40 +101,32 @@ function App({ Component, pageProps }) {
         <ul className="navbar">
           <li className="navbarItem" aria-hidden="true">
             <button className="doubleArrows">
-              <img src={imgDoubleRight} alt="" />
+              <img src="/img/angle-double-right-solid.svg" alt="" />
               <span>Gabriel Molter</span>
             </button>
           </li>
           <li className="navbarItem">
-            <Link href="/">
-              <a ref={refHome}>
-                <img src={imgFingerprint} alt={t.biography} />
-                <span>Bio</span>
-              </a>
+            <Link href="/" ref={refHome}>
+              <img src="/img/fingerprint-solid.svg" alt={t.biography} />
+              <span>Bio</span>
             </Link>
           </li>
           <li className="navbarItem">
-            <Link href="/resume" id="resumeLink">
-              <a ref={refResume}>
-                <img src={imgIdCard} alt={t.resume} />
-                <span>{t.resume}</span>
-              </a>
+            <Link href="/resume" id="resumeLink" ref={refResume}>
+              <img src="/img/id-card-solid.svg" alt={t.resume} />
+              <span>{t.resume}</span>
             </Link>
           </li>
           <li className="navbarItem">
-            <Link href="/portfolio">
-              <a ref={refPortfolio}>
-                <img src={imgCode} alt="Portfolio" />
-                <span>Portfolio</span>
-              </a>
+            <Link href="/portfolio" ref={refPortfolio}>
+              <img src="/img/code-solid.svg" alt="Portfolio" />
+              <span>Portfolio</span>
             </Link>
           </li>
           <li className="navbarItem">
-            <Link href="/hireMe">
-              <a ref={refHireMe}>
-                <img src={imgEnvelope} alt={t.hireme} />
-                <span>{t.hireme}</span>
-              </a>
+            <Link href="/hireMe" ref={refHireMe}>
+              <img src="/img/envelope-open-text-solid.svg" alt={t.hireme} />
+              <span>{t.hireme}</span>
             </Link>
           </li>
           <li className="navbarItem social startSocialMedia">
@@ -159,7 +135,7 @@ function App({ Component, pageProps }) {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src={imgGithub} alt="GitHub" />
+              <img src="/img/github-square-brands.svg" alt="GitHub" />
               <span>GitHub</span>
             </a>
           </li>
@@ -169,18 +145,8 @@ function App({ Component, pageProps }) {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src={imgLinkedin} alt="LinkedIn" />
+              <img src="/img/linkedin-brands.svg" alt="LinkedIn" />
               <span>LinkedIn</span>
-            </a>
-          </li>
-          <li className="navbarItem social">
-            <a
-              href="https://www.behance.net/gjmolter"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img src={imgBehance} alt="Behance" />
-              <span>Behance</span>
             </a>
           </li>
         </ul>
@@ -195,7 +161,7 @@ function App({ Component, pageProps }) {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src={imgGithub} alt="GitHub" />
+                <img src="/img/github-square-brands.svg" alt="GitHub" />
               </a>
             </li>
             <li className="navbarItem">
@@ -204,7 +170,7 @@ function App({ Component, pageProps }) {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src={imgLinkedin} alt="LinkedIn" />
+                <img src="/img/linkedin-brands.svg" alt="LinkedIn" />
               </a>
             </li>
             <li className="navbarItem">
@@ -213,7 +179,7 @@ function App({ Component, pageProps }) {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src={imgBehance} alt="Behance" />
+                <img src="/img/behance-square-brands.svg" alt="Behance" />
               </a>
             </li>
           </ul>
@@ -238,7 +204,7 @@ function App({ Component, pageProps }) {
             >
               <span>{t.seeThisIn} </span>
               <img
-                src={router.locale == "en" ? imgBrazil : imgCanada}
+                src={router.locale == "en" ? "/img/brazil-flag.svg" : "/img/canada-flag.svg"}
                 alt={t.getInLang}
               />
               <span> {t.languageName}</span>

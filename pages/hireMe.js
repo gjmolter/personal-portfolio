@@ -21,7 +21,7 @@ export default function HireMe() {
     setBtnText(t.send);
   }, [router.locale]);
 
-  const { register, handleSubmit, errors, reset } = useForm();
+  const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
   useEffect(() => {
     if (Object.keys(errors).length !== 0) {
@@ -71,37 +71,35 @@ export default function HireMe() {
       <h1>Hire Me</h1>
       <form onSubmit={handleSubmit(sendEmail)} className="contactForm">
         <label htmlFor="name">{t.name}</label>
-        {errors.name && <span className="alert error">{t.typeName}</span>}
+        {errors?.name && <span className="alert error">{t.typeName}</span>}
         <input
           id="name"
           name="name"
           type="text"
           placeholder="Luke Skywalker"
-          ref={register({ required: true })}
+          {...register("name", { required: true })}
           style={addErrorBorder(errors.name)}
         />
         <label htmlFor="email">e-mail</label>
-        {errors.email && <span className="alert error">{t.typeEmail}</span>}
+        {errors?.email && <span className="alert error">{t.typeEmail}</span>}
         <input
           id="email"
           name="email"
           type="email"
           placeholder="luke@rebelalliance.com"
-          ref={register({
+          {...register("email", {
             required: true,
-            pattern: {
-              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-            },
+            pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
           })}
           style={addErrorBorder(errors.email)}
         />
         <label htmlFor="message">{t.message}</label>
-        {errors.message && <span className="alert error">{t.typeMessage}</span>}
+        {errors?.message && <span className="alert error">{t.typeMessage}</span>}
         <textarea
           id="message"
           name="message"
           placeholder={t.placeholderMessage}
-          ref={register({ required: true })}
+          {...register("message", { required: true })}
           style={addErrorBorder(errors.message)}
         />
         {alert.message != "" && (

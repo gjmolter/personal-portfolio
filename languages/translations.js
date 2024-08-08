@@ -26,7 +26,6 @@ export default {
     placeholderMessage:
       "We need you to code our new Hoth defense system. Payment: 10,000 imperial credits.",
     all: "all",
-    allweb: "all web",
     socialmedia: "social media",
     projectcom: "project.com",
     screenshotAlt: "Portfolio project screenshot",
@@ -50,9 +49,10 @@ export default {
     resume: "Resumé",
     summary: "Summary",
     fullstackDev: "Full-stack developer, creative, fast learner and proactive.",
-    experienceYears: "More than 6 years of software development experience.",
+    experienceYears: "More than 9 years of software development experience.",
     successfullApps:
       "Published 2 successful apps on the  AppStore, one of them reaching Education Top 10 for Brazil in 2014.",
+    successfullSites: "Developed and maintained several successful websites for big companies like banks and universities.",
     workExperience: "Work Experience",
     rocket: "Rocket",
     manWithTie: "Man with tie",
@@ -60,6 +60,7 @@ export default {
     present: "Present",
     freelancerDesc:
       "I've worked on web and mobile projects for different companies both in Canada and Brazil. Some of these projects are displayed on my portfolio page.",
+    baDesc: "Worked as a Full-stack Web Developer at Ballistic Arts, developing websites and web applications, managing servers and databases, and creating and maintaining APIs.",
     webDevTrainee: "Web Developer Trainee",
     webDevTraineeTimeframe: "November 2015 - June 2016",
     petropolis: "Petrópolis, Brazil",
@@ -67,7 +68,7 @@ export default {
       "Here I've created ecommerce websites using CiaShop framework, HTML, CSS and JS. I was also helping other teams with different technologies when needed (iOS development, mostly). My team's main goal was to develop conversion-oriented front-ends that were easy to maintain, with clean and readable code.",
     education: "Education",
     computerStudies: "Computer Studies",
-    computerStudiesTimeframe: "January 2021 - Present",
+    computerStudiesTimeframe: "January 2021 - December 2023",
     infoTech: "Information Technology",
     infoTechTimeframe: "October 2017 - December 2019",
     canada: "Canada",
@@ -78,7 +79,7 @@ export default {
     talkingBubble: "Comics talking bubble",
     english: "English",
     portuguese: "Portuguese",
-    itskills: "IT Skills",
+    itskills: "Skills",
     graphicDesign: "Graphic Design",
     certifications: "Certifications",
     mortarboard: "Mortarboard",
@@ -115,7 +116,6 @@ export default {
     placeholderMessage:
       "Nós precisamos que você desenvolva o novo sistema de defesa de Hoth. Pagamento: 10.000 creditos imperiais.",
     all: "todos",
-    allweb: "todos web",
     socialmedia: "mídias sociais",
     projectcom: "projeto.com",
     screenshotAlt: "Screenshot de projeto de Portfolio",
@@ -141,9 +141,10 @@ export default {
     fullstackDev:
       "Desenvolvedor Full-stack, criativo, proativo e de rápido aprendizado.",
     experienceYears:
-      "Mais de 6 anos de experiência em Desenvolvimento de Software.",
+      "Mais de 9 anos de experiência em Desenvolvimento de Software.",
     successfullApps:
       "Publiquei 2 apps de sucesso na  AppStore, um deles alcançando o Top 10 Educação no Brasil em 2014.",
+    successfullSites: "Desenvolvi e mantive vários sites de sucesso para grandes empresas como bancos e universidades.",
     workExperience: "Experiência de Trabalho",
     rocket: "Foguete",
     manWithTie: "Homem de gravata",
@@ -151,6 +152,7 @@ export default {
     present: "Presente",
     freelancerDesc:
       "Trabalhei em projetos para diferentes empresas, no Brasil e no Canadá. Alguns desses projetos estão disponíveis na minha página de portfólio.",
+    baDesc: "Trabalhei como Desenvolvedor Web Full-stack na Ballistic Arts, desenvolvendo sites e aplicações web, gerenciando servidores e bancos de dados, e criando e mantendo APIs.",
     webDevTrainee: "Estagiário de Desenvolvimento Web",
     webDevTraineeTimeframe: "Novembro de 2015 - Junho de 2016",
     petropolis: "Petrópolis - RJ, Brasil",
@@ -158,7 +160,7 @@ export default {
       "Aqui eu criei sites de e-commerce usando o framework da CiaShop, HTML, CSS e JS. Eu também ajudava outros times com tecnologias diferentes quando necessário (Desenvolvimento iOS, normalmente) O principal objetivo do meu time era criar front-ends orientados para a conversão que fossem fáceis de manter com código limpo e legível.",
     education: "Educação",
     computerStudies: "Ciência da Computação",
-    computerStudiesTimeframe: "January 2021 - Presente",
+    computerStudiesTimeframe: "Janeiro de 2021 - Dezembro de 2023",
     infoTech: "Tecnologia da Informação",
     infoTechTimeframe: "Outubro de 2017 - Dezembro de 2019",
     canada: "Canadá",
@@ -169,7 +171,7 @@ export default {
     talkingBubble: "Balão de fala de quadrinhos",
     english: "Inglês",
     portuguese: "Português",
-    itskills: "Habilidades em TI",
+    itskills: "Habilidades",
     graphicDesign: "Design Gráfico",
     certifications: "Certificações",
     mortarboard: "Capelo",
