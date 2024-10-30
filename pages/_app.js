@@ -26,12 +26,9 @@ function App({ Component, pageProps }) {
 
   useEffect(() => {
     if (window) {
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
+      window.plausible = window.plausible || function () {
+        (window.plausible.q = window.plausible.q || []).push(arguments)
       }
-      gtag("js", new Date());
-      gtag("config", "G-CV0FZ34LR2");
     }
 
     if (
@@ -91,11 +88,6 @@ function App({ Component, pageProps }) {
         />
 
         <meta name="twitter:card" content="summary_large_image" />
-
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-CV0FZ34LR2"
-        ></script>
       </Head>
       <nav>
         <ul className="navbar">
@@ -211,6 +203,7 @@ function App({ Component, pageProps }) {
             </a>
           </p>
         </footer>
+        <script defer data-domain="gabrielmolter.com" src="https://analytics.chillycapybara.com/js/script.file-downloads.outbound-links.js"></script>
       </main>
     </>
   );
