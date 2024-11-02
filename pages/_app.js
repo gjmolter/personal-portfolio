@@ -203,7 +203,7 @@ function App({ Component, pageProps }) {
             </a>
           </p>
         </footer>
-        <script defer data-domain="gabrielmolter.com" src="https://analytics.chillycapybara.com/js/script.file-downloads.outbound-links.js"></script>
+        <script defer data-domain="gabrielmolter.com" src="https://analytics.cpbr.digital/js/script.file-downloads.outbound-links.js"></script>
       </main>
     </>
   );
