@@ -37,6 +37,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: Lan
   const { lang } = await params;
   const language = await getLang(lang);
   const meta = metadataTranslations[language];
+  const pageUrl = `${url}/${language}`;
 
   return {
     metadataBase: new URL(url),
@@ -48,19 +49,36 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: Lan
     authors: [{ name: "Gabriel Molter" }],
     creator: "Gabriel Molter",
     publisher: "Gabriel Molter",
+    keywords: [
+      "Full-Stack Developer",
+      "Web Development",
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Vancouver",
+      "Canada",
+      "Brasil",
+      "Brazil",
+      "FOSS",
+      "Open Source",
+      "Digital Solutions",
+    ],
     alternates: {
-      languages: SUPPORTED_LANGS.reduce((acc, lang) => {
-        acc[lang] = `/${lang}`;
+      canonical: pageUrl,
+      languages: SUPPORTED_LANGS.reduce((acc, l) => {
+        acc[l] = `${url}/${l}`;
         return acc;
       }, {} as Record<string, string>),
-      canonical: `/${language}`,
     },
     openGraph: {
       title: meta.title,
       description: meta.description,
-      url: `${url}/${language}`,
-      siteName: meta.title,
-      images: [{ url: "/img/og.webp" }, { url: "/img/og.png" }],
+      url: pageUrl,
+      siteName: "Gabriel Molter",
+      images: [
+        { url: `${url}/img/og.webp`, width: 791, height: 414, alt: "Gabriel Molter - Full-Stack Developer" },
+        { url: `${url}/img/og.png`, width: 791, height: 414, alt: "Gabriel Molter - Full-Stack Developer" },
+      ],
       type: "website",
       locale: language === "en" ? "en_US" : "pt_BR",
       alternateLocale: language === "en" ? "pt_BR" : "en_US",
@@ -69,12 +87,13 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: Lan
       card: "summary_large_image",
       title: meta.title,
       description: meta.description,
-      images: ["/img/og.webp", "/img/og.png"],
+      images: [`${url}/img/og.webp`, `${url}/img/og.png`],
     },
     robots: {
       index: true,
       follow: true,
     },
+    category: "technology",
   };
 }
 

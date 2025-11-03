@@ -2,9 +2,59 @@ import { loadEntries } from "@/lib/mdx";
 import { getLang } from "@/lib/cookies";
 import { getAllTags, Lang, SUPPORTED_LANGS, Tag } from "@/lib/consts";
 import PostList from "@/components/PostList";
+import type { Metadata } from "next";
 
 export async function generateStaticParams() {
   return SUPPORTED_LANGS.map((lang: Lang) => ({ lang }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: Lang }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  const language = await getLang(lang);
+  const url = "https://gabrielmolter.com";
+  const pageUrl = `${url}/${language}/blog`;
+
+  const translations = {
+    en: {
+      title: "Blog",
+      description: "Articles, thoughts, and insights about web development, technology, and digital solutions.",
+    },
+    pt: {
+      title: "Blog",
+      description: "Artigos, pensamentos e insights sobre desenvolvimento web, tecnologia e soluções digitais.",
+    },
+  };
+
+  const meta = translations[language];
+
+  return {
+    title: meta.title,
+    description: meta.description,
+    alternates: {
+      canonical: pageUrl,
+      languages: {
+        en: `${url}/en/blog`,
+        pt: `${url}/pt/blog`,
+      },
+    },
+    openGraph: {
+      title: meta.title,
+      description: meta.description,
+      url: pageUrl,
+      type: "website",
+      locale: language === "en" ? "en_US" : "pt_BR",
+      alternateLocale: language === "en" ? "pt_BR" : "en_US",
+    },
+    twitter: {
+      card: "summary",
+      title: meta.title,
+      description: meta.description,
+    },
+  };
 }
 
 export default async function BlogPage({

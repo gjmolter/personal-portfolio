@@ -2,6 +2,7 @@ import { loadEntries } from "@/lib/mdx";
 import { getLang } from "@/lib/cookies";
 import { getAllTags, Lang, SUPPORTED_LANGS, Tag } from "@/lib/consts";
 import PostList from "@/components/PostList";
+import type { Metadata } from "next";
 
 const dictionary = {
   pt: {
@@ -14,6 +15,51 @@ const dictionary = {
 
 export async function generateStaticParams() {
   return SUPPORTED_LANGS.map((lang: Lang) => ({ lang }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ lang: Lang }> }): Promise<Metadata> {
+  const { lang } = await params;
+  const language = await getLang(lang);
+  const url = "https://gabrielmolter.com";
+  const pageUrl = `${url}/${language}/store`;
+
+  const translations = {
+    en: {
+      title: "Garage Sale",
+      description: "Stuff I'm selling. Electronics, gadgets, books and more. Check out what's available!",
+    },
+    pt: {
+      title: "Lojinha",
+      description: "Coisas que estou vendendo. Eletrônicos, gadgets, livros e mais. Veja o que está disponível!",
+    },
+  };
+
+  const meta = translations[language];
+
+  return {
+    title: meta.title,
+    description: meta.description,
+    alternates: {
+      canonical: pageUrl,
+      languages: {
+        en: `${url}/en/store`,
+        pt: `${url}/pt/store`,
+      },
+    },
+    openGraph: {
+      title: meta.title,
+      description: meta.description,
+      url: pageUrl,
+      type: "website",
+      locale: language === "en" ? "en_US" : "pt_BR",
+      alternateLocale: language === "en" ? "pt_BR" : "en_US",
+    },
+    twitter: {
+      card: "summary",
+      title: meta.title,
+      description: meta.description,
+    },
+  };
 }
 
 export default async function StorePage({
