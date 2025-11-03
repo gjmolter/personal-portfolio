@@ -3,16 +3,11 @@ import createMDX from "@next/mdx";
 import remarkMdxFrontmatter from "remark-mdx-frontmatter";
 import remarkFrontmatter from "remark-frontmatter";
 import remarkGfm from "remark-gfm";
-import remarkUnwrapImages from "remark-unwrap-images"
+import remarkUnwrapImages from "remark-unwrap-images";
 
 const withMDX = createMDX({
   options: {
-    remarkPlugins: [
-      remarkFrontmatter,
-      remarkGfm,
-      remarkUnwrapImages,
-      [remarkMdxFrontmatter, { name: 'frontmatter' }],
-    ],
+    remarkPlugins: [remarkFrontmatter, remarkGfm, remarkUnwrapImages, [remarkMdxFrontmatter, { name: "frontmatter" }]],
   },
 });
 
@@ -63,11 +58,11 @@ const nextConfig: NextConfig = {
             key: "Content-Security-Policy",
             value: [
               "default-src 'self'",
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://nosy.cpbr.digital",
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://nosy.cpbr.digital https://static.cloudflareinsights.com",
               "style-src 'self' 'unsafe-inline'",
               "img-src 'self' data: blob:",
               "font-src 'self' data:",
-              "connect-src 'self' https://nosy.cpbr.digital",
+              "connect-src 'self' https://nosy.cpbr.digital https://cloudflareinsights.com",
               "frame-ancestors 'self'",
               "base-uri 'self'",
               "form-action 'self'",
