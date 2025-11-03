@@ -1,11 +1,19 @@
-## This is my portfolio website.
+# Gabriel Molter's Personal Website
 
-You can see it running at: [gabrielmolter.com](https://gabrielmolter.com)
+Next.js personal portfolio website with blog, portfolio, and contact form.
 
-Frontend is NextJS, with statically generated pages.
+## Setup
 
-Backend is NodeJS.
+```bash
+npm install
+cp .env.example .env
+# Edit .env with your SMTP credentials
+npm run dev
+```
 
-Icons are from FontAwesome
+## Build
 
-It is hosted in a serverless environment with Vercel.
+```bash
+npm run build
+npm start
+```

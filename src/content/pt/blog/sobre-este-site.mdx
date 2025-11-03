@@ -1,0 +1,81 @@
+---
+
+title: "Além do Código: Construindo Este Site"
+description: "Uma pequena visão dos bastidores sobre o porquê e como este site foi construído da maneira que é."
+image: "/img/content/default.webp"
+date: "2025-11-02"
+tags:
+- Desenvolvimento Frontend
+- Análise de Projeto
+counterparts:
+- en: "about-this-site"
+---
+
+**Lembrete**: O código-fonte completo deste site está disponível no [GitHub](https://github.com/gjmolter/gabrielmolter).
+
+Eu tenho um site pessoal faz tempo, cerca de uma década, e ao longo dos anos ele passou por diversas iterações, cada uma refletindo meu aprimoramento como desenvolvedor e as ferramentas que eu tinha à disposição. Esta é a versão mais recente, a que celebra uma década pagando pela renovação de registro do domínio.
+
+## Anteriormente
+
+### 2015 - 2019
+
+A primeira versão deste site era muito mais simples, com páginas HTML estáticas e um formulário de contato em PHP. Foi feita na época em que comecei a trabalhar com desenvolvimento web novamente (ou pela primeira vez, se você desconsiderar os sites em Flash), após alguns anos trabalhando principalmente em aplicativos iOS.
+
+![Captura de tela do site pessoal de Gabriel Molter. A barra de navegação superior é azul-escura com um logotipo branco, apresentando links para “início”, “portfólio”, “currículo” e “contrate-me”. A área principal do conteúdo exibe uma grande saudação “Olá, mundo!”, seguida por um texto introdutório centralizado. A barra lateral direita inclui uma seção de “certificações” com um selo verde de “Microsoft Certified Professional” e uma seção de “redes sociais” com ícones do LinkedIn, Dribbble e Behance. | Caption: Primeira versão do meu site pessoal, lançada originalmente no final de 2015, recebendo pequenas atualizações até 2019.](/img/content/blog/about-this-site/2019-site.png)
+
+### 2020 - 2025
+
+Por volta do início de 2020, eu tive um tempo livre e decidi reformular todo o site, que já estava bem desatualizado. Eu tinha acabado de ouvir falar desse tal de **Next.js**, e estava ansioso para experimentar.
+
+Fiz um esboço de como eu queria que o site fosse, e comecei a programar. Foi uma boa melhora em relação à versão anterior, embora eu não tenha alterado muito da estrutura original do site, mantendo as mesmas quatro páginas:
+
+- Homepage
+- Currículo
+- Portfólio
+- Contato
+
+Entre as mudanças feitas nesta versão, as mais importantes foram a melhora da UI (que em boa parte foi mantida na versão atual), e a adição de suporte a multiplos idiomas (Inglês e Português). Gostei muito do resultado, mas por ter sido meu primeiro projeto em Next.js, havia muitas coisas que eu faria diferente se um dia o reconstruísse. Bem... o dia chegou.
+
+## Presente
+
+Recentemente, olhei para este site novamente e senti que era hora de outra atualização. Eu ainda estava feliz com o design, mas achei que o código poderia ser aprimorado e modernizado, e também queria adicionar alguns recursos novos. Então listei os meus objetivos para uma nova versão:
+
+### 1. Adicionar um Blog
+
+Tinha que ser fácil de escrever e manter, sem CMS sofisticado, apenas algo simples e integrado diretamente ao código.
+
+Há cerca de uma década eu tinha um site chamado *Gambiarrando*. Era um site simples em WordPress onde eu compartilhava dicas rápidas de tecnologia, fazia análises de produtos e escrevia sobre praticamente qualquer outra coisa que eu achasse que pudesse ser útil para outras pessoas. Quando me mudei para o Canadá, não estava mais tendo tempo para atualizar e manter o site, então acabei tirando tudo do ar para economizar aquele troco que eu estava pagando de hospedagem.
+
+Desde então eu tenho sentido falta de um espaço para compartilhar pensamentos sobre as coisas que gosto. E que lugar melhor para fazer isso do que nesse site aqui, né?
+
+### 2. Adicionar uma Loja
+
+Eu não queria transformar o site em um e-commerce, seria um exagero para minhas necessidades, mas eu queria uma seção onde pudesse postar alguns itens que eu estivesse vendendo, como um laptop usado ou coisas do gênero.
+
+### 3. Performance Perfeita
+
+Eu já estava bem satisfeito com o desempenho do site, mas ainda não era perfeito. Meu objetivo era obter uma pontuação perfeita no [Lighthouse](https://web.dev/measure). E para alcançar isso, eu queria ter o máximo possível do site gerado estaticamente durante a *build*.
+
+### 4. Evitar Qualquer Coisa que Não Fosse Totalmente Open Source
+
+Eu não queria depender de nada que não fosse código aberto. O próprio Next.js já é FOSS mesmo, mas eu também usava ícones do FontAwesome (que são gratuitos, mas exigem atribuição), Google Analytics e SendGrid para enviar e-mails. Eu queria substituir todos eles.
+
+### 5. Atualizar a Stack de Tecnologia para as Ferramentas que Tenho Usado Recentemente
+
+Tenho usado TypeScript e Tailwind em praticamente todos os meus projetos atualmente, e eu não queria que este fosse diferente. Até então, eu ainda não tinha usado o Tailwind v4, então também foi uma ótima oportunidade para testá-lo.
+
+## Desenvolvimento
+
+Então eu tinha meu plano: Um site Next.js escrito em TypeScript, com estilos Tailwind, Markdown para conteúdo, Ícones do HeroIcons, nodemailer para enviar e-mails usando um servidor SMTP que eu poderia facilmente substituir alterando algumas variáveis de ambiente, e Analytics da minha instância auto-hospedada do Umami. Só faltava programar.
+
+Eu passei por alguns desafios no processo, mas nada que alguns minutos lendo a documentação não resolvessem. Fazer o conteúdo Markdown funcionar da maneira que eu queria com suporte multilíngue foi provavelmente a parte mais difícil de tudo, mas estou muito feliz com a configuração em que acabei chegando e acho que vou conseguir reutilizar boa parte em projetos futuros também.
+
+## Hospedagem & Implantação
+
+Embora o site esteja atualmente hospedado na Vercel, me certifiquei de que ele também é totalmente rodável em qualquer outro servidor. Os recursos que a Vercel me oferece (como o CDN global, pipeline de implantação, etc) seriam bastante demorados para replicar, e eu provavelmente não conseguiria fazer isso por zero dólares, que é exatamente o que eu pago a eles atualmente, então continuarei com eles **por enquanto**.
+
+## Futuro
+
+Estou muito orgulhoso de como isso ficou. É simples, performático, e cuidadosamente construído com ferramentas que eu realmente gosto de usar. Mais do que isso, é uma plataforma que eu realmente quero manter e expandir, e espero não ter a vontade de refazer tudo de novo em cinco anos.
+
+Obrigado por ler até aqui, e espero que esta postagem seja a primeira de muitas que publicarei neste site. Até breve!
