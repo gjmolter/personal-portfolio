@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
-const { SMTP_HOST, SMTP_PORT, SMTP_USERNAME, SMTP_PASSWORD, SMTP_SECURITY } = process.env as Record<
+const { SMTP_HOST, SMTP_PORT, SMTP_USERNAME, SMTP_PASSWORD, SMTP_SECURITY, EMAIL_TO } = process.env as Record<
   string,
   string | undefined
 >;
@@ -58,8 +58,8 @@ export async function POST(request: Request) {
     const safeMessage = escapeHtml(trimmedMessage).replace(/\n/g, "<br/>");
 
     await transporter.sendMail({
+      to: `"Gabriel Molter" <${EMAIL_TO}>`,
       from: `"Website Contact Form" <${SMTP_USERNAME}>`,
-      to: `"Gabriel Molter" <me@gabrielmolter.com>`,
       replyTo: `"${trimmedName}" <${trimmedEmail}>`,
       subject: `New contact form submission from ${trimmedName}`,
       text: `Name: ${trimmedName}\nEmail: ${trimmedEmail}\n\n${trimmedMessage}`,
