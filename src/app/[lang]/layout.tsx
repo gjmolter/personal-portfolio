@@ -25,9 +25,9 @@ const metadataTranslations = {
 
 const url = "https://gabrielmolter.com";
 
-export async function generateMetadata({ params }: { params: Promise<{ lang: Lang }> }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
-  const language = await getLang(lang);
+  const language = await getLang(lang as Lang);
   const meta = metadataTranslations[language];
   const pageUrl = `${url}/${language}`;
 
@@ -102,10 +102,10 @@ export default async function LangLayout({
   params,
 }: Readonly<{
   children: React.ReactNode;
-  params: Promise<{ lang: Lang }>;
+  params: Promise<{ lang: string }>;
 }>) {
   const { lang } = await params;
-  const language = await getLang(lang);
+  const language = await getLang(lang as Lang);
 
   return (
     <LangProvider lang={language}>
