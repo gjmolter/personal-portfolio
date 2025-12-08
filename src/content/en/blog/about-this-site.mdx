@@ -3,7 +3,7 @@
 title: "Beyond the Code: Building this Site"
 description: "A little behind the scenes look at why and how this site is built the way it is."
 image: "/img/content/default.webp"
-date: "2025-11-02"
+date: "2025-11-11"
 tags:
 - Frontend Development
 - Project Breakdown
@@ -47,19 +47,21 @@ It had to be easy to write and maintain, no fancy CMS, just something simple and
 
 You see, about a decade ago I had a site called *Gambiarrando* (which stands for "improvising solutions" in Portuguese). It was a simple WordPress site where I shared quick tech tips, did product reviews and wrote about pretty much anything else I thought could be useful to other people. Life happened, and by the time I moved to Canada, I wasn't finding time to keep it updated anymore, so I eventually took it down to save that couple of bucks I was paying for hosting. 
 
-Since then, I've missed having a space to share thoughts on the things I enjoy. And what better place to do that than on my own website?
+Since then, I've missed having a space to share thoughts on the things I enjoy (and sometimes things I don't). And what better place to do that than on my own website, right?
 
 ### 2. Add a Store
 
-I didn't want to make the site into an e-commerce, as that would be overkill for my needs, but I did want a section I could post some items I might be selling in the future, like a used laptop and things like that.
+I didn't want to make the site into an e-commerce, as that would be overkill, but I did want a section I could post some items I might be selling in the future, like a used laptop and things like that.
 
 ### 3. Perfect Performance 
 
-I was already pretty satisfied with the performance of the site, but it still wasn't perfect. My goal was to get a perfect [Lighthouse](https://web.dev/measure) score. And to achieve that, I wanted to have as much as I could of the site statically generated on build.
+I was already pretty satisfied with the performance of the site, but it still wasn't perfect. My goal was to get a perfect [Lighthouse](https://web.dev/measure) score. And to achieve that, I wanted to have as much as I could of the site statically generated at build time.
+
+![Screenshot of Lighthouse, showing a perfect score of 100/100 for Performance, Accessibility, SEO and Best Practices. | Caption: Lighthouse results after the latest site update.](/img/content/blog/about-this-site/lighthouse.png)
 
 ### 4. Avoid anything that wasn't fully Open Source
 
-I didn't want to rely on anything that wasn't open source. Next.js itself is FOSS, but I also previously used FontAwesome icons (which are free, but require attribution), Google Analytics and SendGrid to send emails. All of which I wanted to replace.
+I didn't want to rely on anything that wasn't open source and permissive licensed. Next.js itself is FOSS, but I also previously used FontAwesome icons (which are free, but require attribution), also Google Analytics and SendGrid to send emails. All of which I wanted to replace.
 
 ### 5. Update the tech stack to the tools I've been using recently
 
@@ -73,10 +75,10 @@ I did run through a few challenges along the way, but nothing a few minutes of r
 
 ## Hosting & Deployment
 
-While the site is currently deployed on Vercel, I made sure it's also fully portable for self-hosting. The features Vercel offers me (like their global CDN, deployment pipeline, etc) would be pretty time-consuming to replicate, and I probably wouldn't be able to do so for zero dollars, which is exactly what I currently pay them, so I'll stay with them **for now**.
+While the site is currently deployed on Vercel, I made sure it's also fully portable for self-hosting. The features Vercel offers me (like their global CDN, deployment pipeline, etc) would be pretty time-consuming to replicate, and I probably wouldn't be able to do so for zero dollars, which is exactly what I currently pay Vercel, so I'll stay with them **for now**.
 
 ## Future
 
-I'm really proud of how this turned out. It's simple, performant, thoughtfully crafted, and built with tools I genuinely enjoy using. More than that, it's a platform I actually want to maintain and expand on, and hopefully not have the urge to rebuild it again in five years. 
+I'm really proud of how this turned out. It's simple, performant, thoughtfully crafted, and built with tools I genuinely enjoy using. More than that, it's a platform I actually want to maintain and expand on, and hopefully not have the urge to rebuild it from scratch again in five years. 
 
-Thanks for reading it through here, and may this post be the first of many I'll publish on this site. See you soon!
+Thanks for reading through here, and may this post be the first of many I'll publish on this site. See you soon!

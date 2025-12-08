@@ -1,13 +1,14 @@
 import type { NextConfig } from "next";
 import createMDX from "@next/mdx";
-import remarkMdxFrontmatter from "remark-mdx-frontmatter";
-import remarkFrontmatter from "remark-frontmatter";
-import remarkGfm from "remark-gfm";
-import remarkUnwrapImages from "remark-unwrap-images";
 
 const withMDX = createMDX({
   options: {
-    remarkPlugins: [remarkFrontmatter, remarkGfm, remarkUnwrapImages, [remarkMdxFrontmatter, { name: "frontmatter" }]],
+    remarkPlugins: [
+      "remark-frontmatter",
+      "remark-gfm",
+      "remark-unwrap-images",
+      ["remark-mdx-frontmatter", { name: "frontmatter" }],
+    ],
   },
 });
 
