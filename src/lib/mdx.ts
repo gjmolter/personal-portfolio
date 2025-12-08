@@ -43,7 +43,11 @@ export async function loadEntries(postType: PostType, lang: Lang): Promise<Item[
     })
   );
 
-  items.sort((a, b) => (b.meta.date ?? "").localeCompare(a.meta.date ?? ""));
+  items.sort((a, b) => {
+    const dateA = a.meta.date ? new Date(a.meta.date).getTime() : -Infinity;
+    const dateB = b.meta.date ? new Date(b.meta.date).getTime() : -Infinity;
+    return dateB - dateA;
+  });
   return items;
 }
 
