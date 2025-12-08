@@ -3,17 +3,18 @@ import { DEFAULT_LANG, SUPPORTED_LANGS } from "@/lib/consts";
 import { match } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
 
-export async function middleware(req: NextRequest) {
+export async function proxy(req: NextRequest) {
   // Check if the lang is already in the pathname
   const { pathname } = req.nextUrl;
-  const pathnameHasLocale = SUPPORTED_LANGS.some((locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`);
+  const pathnameHasLocale = SUPPORTED_LANGS.some(
+    (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
+  );
   const cookie = req.cookies.get("lang");
 
   if (pathnameHasLocale) {
     //if lang is not saved in the cookie, save it now
     const res = NextResponse.next();
-    if (!cookie || cookie.value !== pathname.split("/")[1])
-      res.cookies.set("lang", pathname.split("/")[1]);
+    if (!cookie || cookie.value !== pathname.split("/")[1]) res.cookies.set("lang", pathname.split("/")[1]);
     return res;
   } else if (cookie) {
     //if lang is saved in the cookie, add it to the pathname
@@ -34,7 +35,5 @@ export async function middleware(req: NextRequest) {
 }
 
 export const config = {
-  matcher: [
-    "/((?!_next|api|favicon\\.ico|\\.well-known)(?!.*\\.[a-zA-Z0-9]+$).*)",
-  ],
+  matcher: ["/((?!_next|api|favicon\\.ico|\\.well-known)(?!.*\\.[a-zA-Z0-9]+$).*)"],
 };
