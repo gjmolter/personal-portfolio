@@ -1,0 +1,140 @@
+---
+title: "Buscando Controle de Dados na Era do Capitalismo de Vigilância"
+description: "Dados são valiosos, são a base do mundo moderno. É hora de redefinir nossa relação com os dados que produzimos."
+image: "/img/content/blog/pursuing-data-ownership/pursuing-data-ownership.webp"
+date: "2025-11-27"
+tags:
+- Soberania Digital
+- Controle de Dados
+- Recomendações de Software
+counterparts:
+- en: "pursuing-data-ownership"
+
+---
+
+A coleta em massa de dados veio para ficar, mas isso não é necessariamente ruim. Esses dados têm um grande potencial para impulsionar coisas boas, como cidades inteligentes, saúde personalizada e até mesmo os algoritmos de recomendação. Afinal, todo mundo gosta do Spotify recomendando músicas parecidas com as que a gente curte.
+
+Mas, na verdade, tudo o que pode ser transformado em dados digitais, desde digitações, cliques e histórico de navegação até sua localização GPS e até mesmo dados de saúde, será. Tudo é coletado em massa, simplesmente **porque existe um mercado para isso**. Seus dados são uma mercadoria valiosa que pode ser comprada, vendida e, em última instância, usada para prever e influenciar o comportamento humano. O produto de todo esse processamento de dados são algoritmos poderosos, capazes de coisas como *discriminação de preços*[^1], *radicalização*[^3] e *manipulação política*[^4].
+
+Embora geremos toneladas de dados em nosso dia a dia, raramente paramos para pensar para onde eles vão, quem lucra com eles ou como são usados. Termos e condições e banners de cookies nos dão a ilusão de controle, mas, na prática, funcionam mais como escudos legais para empresas do que como ferramentas úteis para os usuários. A maioria das pessoas aceita esses termos cegamente, sem realmente entender a extensão da vigilância à qual estão consentindo. Mesmo pessoas que se preocupam com a privacidade online muitas vezes optam por aceitar esses termos por conveniência ou por falta de opções melhores. Afinal, se alguém **precisa** do MS Word para o trabalho, é difícil justificar gastar mais de uma hora lendo os termos, já que as opções são simplesmente aceitar ou não usar o produto.
+
+![Infográfico ilustrando o comprimento dos Termos de Serviço das principais empresas de tecnologia. Individualmente, os Termos de Serviço da Microsoft são os mais longos, requerendo aproximadamente 1 hora e 3 minutos para leitura (15.260 palavras). | Estilo: max-h-none](/img/content/blog/pursuing-data-ownership/terms-infographic.jpg)
+
+Por exemplo, por mais que eu deteste as práticas comerciais da Meta, é praticamente impossível viver sem o WhatsApp no ​​Brasil (e na maior parte do mundo, aliás), já que ele é a principal (e às vezes a única) ferramenta de comunicação de mais de 93% da população do país. O domínio oligopolista das grandes empresas de tecnologia sobre nossa infraestrutura digital as torna praticamente **inevitáveis**.
+
+## Mas por que deveríamos nos esforçar para evitá-las?
+
+Já vimos o que acontece quando cedemos demais em nome da conveniência: o e-mail, um protocolo aberto e descentralizado que permitiria a qualquer pessoa hospedar seu próprio servidor de e-mail, agora é efetivamente controlado por grandes empresas como Google e Microsoft. Esse controle rigoroso aumenta a barreira de entrada e torna a alternativa aos seus serviços não impossível, mas impraticável. Por exemplo, geralmente não é possível executar um servidor de e-mail em sua rede doméstica, porque esses intervalos de IP residenciais tendem a ser bloqueados pelas grandes provedoras de email. Para hospedar o próprio email, é preciso alugar um servidor de alguma empresa, mas muitas delas (como a [DigitalOcean](https://docs.digitalocean.com/support/why-is-smtp-blocked/)) sequer permitem a abertura de portas SMTP, tornando impossível usá-las como servidores de e-mail.
+
+Mesmo que você encontre um provedor que permita abrir portas SMTP, hospedar seu próprio servidor de e-mail hoje em dia significa ter que lidar com seus e-mails sendo constantemente marcados como spam pelos grandes provedores. Você provavelmente perderá horas tentando remover seu IP de uma lista de bloqueio na qual você nem sabe como entrou. Isso não se deve a nenhum problema técnico. Um conjunto de registros SPF/DKIM/DMARC perfeitamente configurados e um bom servidor de e-mail provavelmente ainda farão com que você precise entrar em contato com o suporte da Microsoft, tentando descobrir por que diabos o Outlook não está aceitando seus e-mails... [Este guia](https://workaround.org/) aborda com muito mais detalhes os desafios e os aspectos técnicos de hospedar um servidor de e-mail por conta própria, caso você seja ~~louco~~ corajoso o suficiente para tentar.
+
+Não estou dizendo que todos devam hospedar seus próprios servidores de e-mail, isso obviamente seria uma péssima ideia. [Como a própria DigitalOcean apontou](https://www.digitalocean.com/community/tutorials/why-you-may-not-want-to-run-your-own-mail-server), servidores de e-mail são complexos e exigem muito conhecimento para serem configurados e mantidos, mas, como todos nos lembramos cada vez que o Cloudflare fica fora do ar, a saúde da internet depende da descentralização. Não devemos permitir que um punhado de corporações bilionárias controlem o que são, na prática, serviços essenciais. Conveniência não deve vir à custa da privacidade ou do controle. Apoiar padrões abertos, serviços federados e soberania digital não é uma questão de idealismo, mas sim uma forma de manter a internet livre e ajudar a reduzir o já enorme poder político das grandes empresas de tecnologia. 
+
+## O Poder Político da Big Tech
+
+![Os CEOs da Meta, Amazon, Google e X na posse de Trump em 2025 | Caption: Os CEOs da Meta, Amazon, Google e X na posse de Trump em 2025](/img/content/blog/pursuing-data-ownership/bigtech-submitting-to-orange-daddy.webp)
+
+Nós já conhecemos as grandes empresas de tecnologia, ou Big Tech: Google, Meta, Amazon, X, Microsoft, etc.
+É claro que existem milhares de empresas que coletam seus dados e podem ser ainda piores do que essas corporações conhecidas, mas a escala e a quantidade de poder que esses poucos gigantes acumularam os tornam uma ameaça muito mais significativa à liberdade da internet.
+
+Em 2023, parlamentares brasileiros discutiam um novo projeto de lei, o "PL das Fake News". De acordo com essa lei, entre outras medidas, as plataformas seriam responsáveis ​​por moderar o conteúdo e teriam que tomar medidas para remover a desinformação. Em resposta, o Google lançou uma campanha contra o projeto de lei, exibindo uma declaração em sua página inicial. Não se pode subestimar o poder de um banner na página inicial do site mais visitado do país para influenciar a opinião pública. Especialmente em um site como o Google, onde as pessoas buscam informações e geralmente confiam em seus resultados.
+
+![Uma captura de tela da página inicial do Google mostrando uma declaração contra o PL das Fake News | Caption: "O PL das Fake News pode aumentar a confusão sobre o que é verdade ou mentira no Brasil"](/img/content/blog/pursuing-data-ownership/google-fake-news.png)
+
+Mais um episódio de interferência das grandes empresas de tecnologia na política brasileira foi exposto pelo The Intercept, quando um deputado propôs uma emenda para reduzir a responsabilidade dessas empresas na proteção de crianças e adolescentes online. [O arquivo enviado pelo deputado continha metadados que mostravam que, na verdade, havia sido escrito por um funcionário da Meta](https://www.intercept.com.br/2025/08/14/deputado-bolsonarista-emenda-lobista-meta-lei-criancas-internet/).
+
+Seja moldando a realidade que as pessoas veem diariamente em seus feeds e resultados de busca, seja interferindo diretamente no processo político, a quantidade de poder que nossos dados concederam a essas corporações é imensa. 
+
+## O que é Controle de Dados?
+
+Embora Controle de Dados possa ter definições muito diferentes dependendo do contexto, a que estou usando aqui é uma abreviação para estes 4 pilares:
+
+- **Consentimento de Coleta:** Você decide **se, quando, como e o que** será coletado.
+
+- **Consentimento de Uso:** Você escolhe **como, por quem e para quê** seus dados podem ser usados.
+
+- **Portabilidade:** Você pode facilmente transferir seus dados entre serviços, se desejar.
+
+- **Conveniência:** Deve ser conveniente para você decidir sobre qualquer um dos itens acima.
+
+Como você pode ver, essa definição não inclui aspectos como segurança de dados e tratamento adequado de Informações Pessoalmente Identificáveis ​​(PII, *Personal Identifiable Information*), pois isso deveria ser óbvio (se não por senso comum, em alguns casos por lei, como a GDPR, LGPD, CCPA, etc.).
+
+## A Busca
+
+Embora, em um mundo ideal, todos os serviços online vivessem de acordo com esses princípios e os usuários fossem donos de seus dados, essa não é a realidade da sociedade atual. Então, o que podemos fazer para mitigar os danos?
+
+*Embora a ação política organizada seja provavelmente o que traria os melhores resultados*, individualmente podemos ajustar nossos hábitos digitais para recuperar o máximo de controle possível sobre nossos dados. Esses ajustes existem em um espectro: alguns são pequenos e mal afetam nossas rotinas, enquanto outros exigem mudanças significativas no estilo de vida que podem não ser viáveis ​​para todos.
+
+Atualmente, me vejo no meio desse espectro, caminhando lentamente em direção a mudanças de maior impacto. É um processo prazeroso, mas não é livre de desafios.
+
+## Que fazer?
+
+Escolher nossas batalhas é fundamental. Sejamos realistas: provavelmente não conseguiremos viver livres da vigilância e da coleta de dados tão cedo. Mas podemos, pelo menos, reduzir a quantidade de dados que compartilhamos e aumentar a quantidade de dados que possuímos. Mudar esse equilíbrio, mesmo que um pouco, já é uma vitória para mim.
+
+### Rastreando os Dados
+
+O primeiro passo para resolver qualquer problema é compreendê-lo completamente, então descobrir **onde você já deixou seus dados** e **o que ainda está coletando novos dados de você** é um bom ponto de partida. Como usuário da internet desde que me entendo como gente, fazer isso foi um desafio. Por algumas semanas, fui anotando tudo o que me vinha à cabeça em um bloco de notas no meu celular, mas isso não me levou muito longe.
+
+Então tive uma ideia:
+
+A base da maioria dos serviços é o **e-mail**. É a tecnologia central à qual quase tudo se conecta. Eu poderia analisar os dados dos meus próprios e-mails e descobrir onde mais eu tinha contas. Alguns serviços de e-mail permitem que você baixe os dados da sua caixa de entrada no formato `.mbox` ([como o Gmail faz](https://support.google.com/mail/answer/10016932)), então eu baixei os meus e desenvolvi [esta ferramenta](https://mbox-sender-analyzer.vercel.app)[^6] que analisa esses dados e gera uma lista de todas as empresas que já me enviaram e-mails. Executando a ferramenta em todas as minhas contas de e-mail ao longo dos anos e combinando tudo, obtive uma lista gigantesca, porém completa.
+
+### Triagem
+
+Com a lista da etapa anterior em mãos, analisei cada item para determinar os próximos passos. Separei as ações em 4 categorias:
+
+- Excluir - (Excluir a conta, por meio de uma interface web quando possível, ou por e-mail de suporte, se necessário. Também significa cancelar a assinatura se você apenas recebe e-mails, mas não possui uma conta ativa no serviço.)
+- Migrar - (Migrar para um serviço alternativo que ofereça maior controle sobre os dados. Eventualmente excluindo a conta antiga.)
+- Modificar - (Manter o serviço, mas atualizar as configurações de privacidade para reduzir a quantidade de dados coletados e/ou mudar a forma que eu o uso.)
+- Não fazer nada - (Se eu estiver satisfeito com o nível atual de controle sobre os dados ou se não houver literalmente nenhuma maneira de melhorá-lo.)
+
+Se o serviço/produto não estiver mais em uso, ele irá automaticamente para a categoria "Excluir". Se ainda estiver em uso, seguirei o fluxograma abaixo para determinar o próximo passo.
+
+![Um fluxograma manuscrito ilustrando um processo de tomada de decisão sobre a propriedade de dados digitais. A pergunta inicial central é: "Eu sou o proprietário dos dados que gero neste serviço?" Se SIM: O caminho leva a um círculo indicando "Não fazer nada". Se NÃO: O caminho pergunta: "Existe outra opção que me dê mais controle?" Se SIM: Pergunta: "Migrar é muito trabalhoso?" Se NÃO: O resultado é "Migrar!" Se SIM: O caminho segue para a próxima pergunta (abaixo). Se NÃO: Pergunta: "Há algo que eu possa fazer no produto atual que aumente minha privacidade e propriedade dos dados?" Se SIM: O resultado é "Modificar". Se NÃO: Pergunta: "Posso interromper ou reduzir meu uso deste produto?" Se SIM: O resultado é "Modificar". Se NÃO: O resultado final é "Não fazer nada (por enquanto, é o que é...)".](/img/content/blog/pursuing-data-ownership/flowchart-pt.png)
+
+Esta etapa levou muito mais tempo do que eu esperava, mas me proporcionou uma ótima visão geral da minha presença digital. Depois de concluí-la, eu tinha uma lista de ações práticas para implementar.
+
+### Implementando
+
+Agora que eu sabia o que tinha que fazer, era hora de botar a mão na massa. **E foi isso que eu fiz...**
+
+Nos últimos meses eu passei horas enviando e-mails para diferentes empresas, substituindo apps que eu usava por alternativas, e tentando me encontrar nas páginas de configuração, mudando as configurações de privacidade. Eu ainda não terminei o processo, mas estou muito melhor do que comecei, e é exatamente isso que importa. Cada tarefa que eu marcava como concluída me fazia sentir um pouco mais limpo. Sabe aquela sensação de espremer uma espinha? Exatamente assim.
+
+Algumas empresas são mais difíceis de lidar do que outras. Algumas me fizeram esperar semanas por uma resposta, outras foram até bem hostis. Mas ser persistente, educado e conhecer seus direitos é fundamental.
+
+- **Se apoie na comunidade de código aberto**. Na maioria das vezes existe uma alternativa gratuita e de código aberto para o serviço/software proprietário que você está usando.
+- **Conheça as leis de privacidade que se aplicam a você**. Citar as leis exatas ajudará as empresas a cumprir suas solicitações de exclusão e portabilidade mais rapidamente.
+- **Explore todas as páginas de configuração**. Mesmo quando você não consegue eliminar um serviço, há muito que você pode melhorar apenas mudando algumas configurações.
+- **Escolha suas tecnologias de base com sabedoria**. Se você está planejando fazer alterações como o seu sistema operacional, navegador, provedor de e-mail ou outra tecnologia que serve como base para outros serviços, faça isso antes de começar com as alterações menores.
+
+## Minhas Escolhas de Tecnologias de Base
+
+Embora eu gostaria muito de listar todos os serviços, aplicativos e produtos digitais que eu uso, e por que escolhi cada um deles, vamos nos concentrar nas tecnologias de base por enquanto. Esta é uma seção muito pessoal, você pode acabar com opções diferentes com base em suas necessidades e preferências, mas aqui está o que eu escolhi:
+
+- **SO Principal do Computador de Trabalho**: Migrei de MacOS para [Ubuntu](https://ubuntu.com/). Na verdade, o MacOS não é tão ruim. A Apple é provavelmente a Big Tech que mais valoriza a privacidade do usuário. Eu acabei escolhendo uma distro Linux para poder rodá-lo em hardware que não é da Apple. Não me importaria continuar no MacOS, mas não estou a fim de pagar o ágio da Apple no momento.
+- **SO Mobile**: Mantive o iOS aqui. Não há uma boa alternativa para ele no momento. [GrapheneOS](https://grapheneos.org/) e outras versões desgoogleadas do Android não chegaram lá ainda, mas estou acompanhando de perto o desenvolvimento delas.
+- **Navegador**: Migrei do Chrome para o [Helium](https://helium.computer/). Eu já tentei muitos navegadores, mas sempre acabava voltando para o Chrome por uma razão ou outra. Helium é o que eu gostei mais até agora. É um navegador baseado em Chromium que funciona bem parecido com o próprio Chrome, mas com muito mais privacidade. Também é [totalmente de código aberto](https://github.com/imputnet/helium) e **não** tenta me empurrar nenhuma besteira de Web3 e crypto pra cima de mim. 
+- **Provedor de Emails + Armazenamento em Nuvem + Calendário**: Migrei do Gmail para o [Proton Mail](https://proton.me/mail). Como eu já disse, hospedar seu próprio servidor de e-mail é uma dor de cabeça sem fim, então eu acabei optando por um provedor que oferece privacidade e controle de dados desde a origem. A principal diferença aqui é que com o Proton, o serviço de e-mail é o produto que eles vendem, enquanto com provedores gratuitos, o serviço de e-mail é apenas uma forma deles obterem o produto que eles realmente estão vendendo: seus dados. Eu analisei muitos provedores, e o Proton é o que eu achei que oferece o melhor equilíbrio entre privacidade e conveniência. O preço também não é tão ruim, especialmente se você pegar o plano com outros serviços para substituir coisas que você já paga de qualquer forma. Considerando que eu já estava pagando por armazenamento em nuvem e um VPN, pegar o bundle do Proton acabou me poupando dinheiro, mesmo pagando pelo serviço de e-mail.
+- **Redes Sociais**: 
+  - Migrei do X para o [Bluesky](https://bsky.app/). Bluesky é uma rede social federada que é construída sobre a ideia de redes sociais descentralizadas. Não precisei pensar muito para deixar o X, é difícil justificar estar em uma rede de propriedade de um simpatizante nazista, cheia de bots, de spam, e na real... de nazistas mesmo.
+  - WhatsApp, Facebook e Instagram são um pouco mais difíceis para mim. Eu ativamente uso WhatsApp e Instagram todos os dias, e mantenho o Facebook pra usar o Marketplace, e pra ter uma conta Meta pra trabalho. Apesar de não ter parado de usar nenhum deles, eu tenho reduzido a quantidade de tempo que eu passo neles, e tenho mexido nas configurações de privacidade dos apps e no próprio telefone para reduzir a quantidade de dados que eu dou para eles.
+  - **Notas e Documentação**: Do Notion para o [AFFiNE](https://affine.pro/). AFFiNE é realmente similar ao Notion, mas é auto-hospedado e de código aberto. Não tem as limitações da conta gratuita do Notion, e tem um modo de whiteboard/edgeless bem legal.
+
+## O que vem depois?
+
+Eu vou, em algum momento, terminar minha lista, e vou manter um olho no desenvolvimento de ferramentas alternativas para as que eu ainda estou usando, mas que não estão me oferecendo o nível de controle de dados que eu quero. Eu devo atualizar este post se algo significativo mudar. Obrigado por ler e por estar interessado em reter seu controle de dados.
+
+
+---
+
+[^1]: Quando empresas (como companhias aéreas e apps como Uber) usam todos os dados que elas coletaram sobre você (e outros usuários) para criar preços personalizados para cada usuário, tentando aproximar-se do *preço de reserva*[^2].
+
+[^2]: *Preço de reserva* é um limite no preço de algo. É o preço mais alto que um comprador está disposto a pagar, e o preço mais baixo que um vendedor está disposto a aceitar.
+
+[^3]: Quando sistemas de recomendação (como os do YouTube ou do TikTok) levam os usuários para conteúdo cada vez mais extremo, para maximizar o engajamento. Com o tempo, isso pode deslocar o discurso público e as crenças individuais de maneiras prejudiciais.
+
+[^4]: O uso de dados pessoais para micro-targeting de usuários e manipulação do comportamento eleitoral. O escândalo do Cambridge Analytica é um exemplo notório.
+
+[^5]: PII (Personally Identifiable Information), que é qualquer dado que pode ser usado para identificar uma pessoa específica, diretamente ou indiretamente. Coisas como nomes, e-mails, endereços IP, etc.
+
+[^6]: Quando eu digo que eu codifiquei isso, o que eu realmente quero dizer é que eu codifiquei uma prova de conceito, e depois fiz uma IA construir a interface toda em torno dele. A ferramenta atualmente só funciona para arquivos .mbox. Sei que o Outlook usa um formato diferente, mas não planejo suportar isso no momento. A ferramenta é [open source no GitHub](https://github.com/gjmolter/mbox-sender-analyzer), então sinta-se à vontade para contribuir e talvez adicionar esse suporte se você estiver disposto.
