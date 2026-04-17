@@ -1,5 +1,5 @@
 import { loadEntry, loadSlugs } from "@/lib/mdx";
-import { reduceCounterparts, SUPPORTED_LANGS, Lang } from "@/lib/consts";
+import { SUPPORTED_LANGS, Lang, getSlugsByLang } from "@/lib/consts";
 import { getLang } from "@/lib/cookies";
 import SafeImage from "@/components/SafeImage";
 import BackButton from "@/components/BackButton";
@@ -28,21 +28,21 @@ export async function generateMetadata({
   const url = "https://gabrielmolter.com";
   const pageUrl = `${url}/${language}/blog/${slug}`;
   const imageUrl = meta.image.startsWith("http") ? meta.image : `${url}${meta.image}`;
+  const slugByLang = getSlugsByLang(meta.counterparts, language, slug);
 
   return {
     title: meta.title,
     description: meta.description,
     alternates: {
       canonical: pageUrl,
-      languages: SUPPORTED_LANGS.reduce((acc, l) => {
-        if (meta.counterparts && meta.counterparts.length > 0) {
-          const counterpart = meta.counterparts.find((c) => c[l]);
-          if (counterpart && counterpart[l]) {
-            acc[l] = `${url}/${l}/blog/${counterpart[l]}`;
-          }
-        }
-        return acc;
-      }, {} as Record<string, string>),
+      languages: SUPPORTED_LANGS.reduce(
+        (acc, l) => {
+          const localizedSlug = slugByLang[l];
+          if (localizedSlug) acc[l] = `${url}/${l}/blog/${localizedSlug}`;
+          return acc;
+        },
+        {} as Record<string, string>,
+      ),
     },
     openGraph: {
       title: meta.title,
@@ -67,7 +67,6 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
   const { slug } = await params;
   const lang = await getLang();
   const { Component, meta } = await loadEntry(slug, "blog", lang);
-  const counterparts = reduceCounterparts(meta.counterparts);
   const formattedDate = meta.date
     ? new Date(meta.date + "T00:00:00.000Z").toLocaleDateString(lang, {
         year: "numeric",
@@ -78,7 +77,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
     : undefined;
   return (
     <div className="w-full max-w-boxed mx-auto px-6 pt-16 md:pt-28 flex flex-col pb-16">
-      <div id="lang-counterparts" data-counterparts={JSON.stringify(counterparts)} className="hidden" />
+      <div id="lang-counterparts" data-counterparts={JSON.stringify(meta.counterparts)} className="hidden" />
       <BackButton className="mb-6" href={`/${lang}/blog`} />
       <div className="flex gap-12 mb-16 max-lg:flex-col-reverse">
         <div className="flex-1 relative min-h-[300px]">

@@ -52,7 +52,7 @@ const LangSwitcher = () => {
     <div className="fixed bottom-20 md:bottom-4 right-4 z-50">
       <button
         onClick={handleClick}
-        className="glass flex items-center gap-1 rounded-full text-lightgray px-3 py-2 hover:bg-black/50 transition-all duration-300"
+        className="glass cursor-pointer flex items-center gap-1 rounded-full text-lightgray px-3 py-2 hover:bg-black/50 transition-all duration-300"
       >
         {isClient && winW > 768 && <span className="text-[11px] whitespace-nowrap">{dict.viewPageIn}</span>}
         <Image

@@ -1,4 +1,4 @@
-import type { Item } from "./mdx";
+import type { Counterparts, Item } from "./mdx";
 
 export const SUPPORTED_LANGS = ["en", "pt"] as const;
 export const DEFAULT_LANG = "en";
@@ -79,11 +79,11 @@ export const getAllTags = (posts: Item[]) => {
   return tags;
 };
 
-export const reduceCounterparts = (counterparts: { [key: string]: string }[] | undefined) => {
-  if (!counterparts || !Array.isArray(counterparts) || counterparts.length === 0) return {};
-  return counterparts.reduce((acc, currentObject) => {
-    const langCode = Object.keys(currentObject)[0];
-    acc[langCode] = currentObject[langCode];
-    return acc;
-  }, {});
-};
+export const getSlugsByLang = (
+  counterparts: Counterparts | undefined,
+  currentLang: Lang,
+  currentSlug: string,
+): Partial<Record<Lang, string>> => ({
+  ...(counterparts ? { ...counterparts } : {}),
+  [currentLang]: currentSlug,
+});

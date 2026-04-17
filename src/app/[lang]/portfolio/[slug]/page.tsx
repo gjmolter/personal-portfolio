@@ -1,6 +1,6 @@
 import { loadEntry, loadSlugs } from "@/lib/mdx";
 import { getLang } from "@/lib/cookies";
-import { reduceCounterparts, SUPPORTED_LANGS, Lang } from "@/lib/consts";
+import { SUPPORTED_LANGS, Lang, getSlugsByLang } from "@/lib/consts";
 import SafeImage from "@/components/SafeImage";
 import BackButton from "@/components/BackButton";
 import PostContent from "@/components/PostContent";
@@ -41,21 +41,21 @@ export async function generateMetadata({
   const url = "https://gabrielmolter.com";
   const pageUrl = `${url}/${language}/portfolio/${slug}`;
   const imageUrl = meta.image.startsWith("http") ? meta.image : `${url}${meta.image}`;
+  const slugByLang = getSlugsByLang(meta.counterparts, language, slug);
 
   return {
     title: meta.title,
     description: meta.description,
     alternates: {
       canonical: pageUrl,
-      languages: SUPPORTED_LANGS.reduce((acc, l) => {
-        if (meta.counterparts && meta.counterparts.length > 0) {
-          const counterpart = meta.counterparts.find((c) => c[l]);
-          if (counterpart && counterpart[l]) {
-            acc[l] = `${url}/${l}/portfolio/${counterpart[l]}`;
-          }
-        }
-        return acc;
-      }, {} as Record<string, string>),
+      languages: SUPPORTED_LANGS.reduce(
+        (acc, l) => {
+          const localizedSlug = slugByLang[l];
+          if (localizedSlug) acc[l] = `${url}/${l}/portfolio/${localizedSlug}`;
+          return acc;
+        },
+        {} as Record<string, string>,
+      ),
     },
     openGraph: {
       title: meta.title,
@@ -90,11 +90,9 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
     : undefined;
   const url = (meta as typeof meta & { url?: string }).url;
 
-  const counterparts = reduceCounterparts(meta.counterparts);
-
   return (
     <div className="w-full max-w-boxed mx-auto px-4 sm:px-6 pt-16 md:pt-28 flex flex-col pb-16">
-      <div id="lang-counterparts" data-counterparts={JSON.stringify(counterparts)} className="hidden" />
+      <div id="lang-counterparts" data-counterparts={JSON.stringify(meta.counterparts)} className="hidden" />
       <BackButton className="mb-6" href={`/${lang}/portfolio`} />
       <div className="flex gap-8 md:gap-12 mb-12 md:mb-16 max-lg:flex-col">
         <div className="flex-1 relative min-h-[250px] sm:min-h-[300px] bg-white/5 rounded-lg p-4 border border-white/30">

@@ -7,6 +7,8 @@ import { Lang } from "./consts";
 
 export type PostType = "blog" | "portfolio" | "store";
 
+export type Counterparts = Partial<Record<Lang, string>>;
+
 export type BaseMeta = {
   title: string;
   description: string;
@@ -14,9 +16,7 @@ export type BaseMeta = {
   date: string;
   excerpt: string;
   tags: string[];
-  counterparts?: {
-    [key in Lang]: string;
-  }[];
+  counterparts?: Counterparts;
   company?: string;
 };
 
@@ -40,7 +40,7 @@ export async function loadEntries(postType: PostType, lang: Lang): Promise<Item[
       const mod = await import(`@/content/${lang}/${postType}/${slug}.mdx`);
       const meta = { ...(mod.frontmatter ?? mod.metadata), slug };
       return { slug, meta } as Item;
-    })
+    }),
   );
 
   items.sort((a, b) => {
