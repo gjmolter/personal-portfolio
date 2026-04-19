@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
+import NosyPreconnect from "@/components/NosyPreconnect";
 import "./globals.css";
 import { ViewTransitions } from "next-view-transitions";
 
@@ -22,7 +23,10 @@ export default function RootLayout({
   return (
     <ViewTransitions>
       <html lang="en">
-        <body className={`${montserrat.variable} antialiased`}>{children}</body>
+        <body className={`${montserrat.variable} antialiased`}>
+          <NosyPreconnect />
+          {children}
+        </body>
       </html>
     </ViewTransitions>
   );
