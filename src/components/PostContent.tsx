@@ -42,7 +42,7 @@ export default function PostContent({ children }: { children: React.ReactNode })
 
   return (
     <div
-      className="prose prose-invert [&_.footnotes]:text-sm [&_.footnotes]:text-gray-400 [&_sup]:pl-[3px] prose-li:marker:text-orange w-full max-w-[800px] mx-auto"
+      className="prose prose-invert [&_.footnotes]:text-sm [&_.footnotes]:text-gray-400 [&_.footnotes>h2]:hidden [&_sup]:pl-[3px] prose-li:marker:text-orange w-full max-w-[800px] mx-auto"
       id="post-content"
     >
       {children}
