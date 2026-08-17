@@ -125,8 +125,8 @@ export default async function LangLayout({
       </main>
       <Script
         defer
-        src="https://nosy.cpbr.digital/script.js"
-        data-website-id="4e117b3d-c4e3-4934-bea5-0a3d0adc733e"
+        src="https://nosy.cpbr.digital/api/script.js"
+        data-site-id="ca504082608d"
       ></Script>
     </LangProvider>
   );
