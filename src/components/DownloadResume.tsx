@@ -17,14 +17,14 @@ const dictionary = {
 };
 
 const downloadPDF = async (lang: string) => {
-  const res = await fetch(`/api/resume?lang=${lang}`);
+  const res = await fetch(`/${lang}/resume.pdf`);
   if (!res.ok) throw new Error("Failed to generate PDF");
 
   const blob = await res.blob();
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
   a.href = url;
-  a.download = `gabriel-molter-${lang}.pdf`;
+  a.download = `gabriel-molter-resume-${lang}.pdf`;
   a.click();
   URL.revokeObjectURL(url);
 };
