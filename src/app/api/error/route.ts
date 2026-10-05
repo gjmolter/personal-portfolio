@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
-const { SMTP_HOST, SMTP_PORT, SMTP_USERNAME, SMTP_PASSWORD, SMTP_SECURITY, EMAIL_TO } = process.env as Record<
+const { SMTP_HOST, SMTP_PORT, SMTP_USERNAME, SMTP_FROM, SMTP_PASSWORD, SMTP_SECURITY, EMAIL_TO } = process.env as Record<
   string,
   string | undefined
 >;
@@ -29,7 +29,7 @@ export async function POST(request: Request) {
 
     await transporter.sendMail({
       to: `"Gabriel Molter" <${EMAIL_TO}>`,
-      from: `"Site Error Report 🚨" <${SMTP_USERNAME}>`,
+      from: `"Site Error Report 🚨" <${SMTP_FROM || SMTP_USERNAME}>`,
       subject: `Page: ${errorInfo?.url?.slice(0, 100) ?? "unknown page"}`,
       text: safeJson,
       html: `<pre>${safeJson.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</pre>`,
